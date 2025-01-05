@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portofolio [Nama Anda]</title>
+    <title>Portofolio</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -127,8 +127,8 @@
       element.textContent = value;
     }
   }
-
-  // Example usage:
   updateElementById("name", namaLengkap);
   updateElementById("footer", footerText);
+
+  document.title = `Portofolio ${namaLengkap}`;
 </script>
