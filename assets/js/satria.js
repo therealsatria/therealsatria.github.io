@@ -12,7 +12,7 @@ function updateElementById(id, value) {
 }
 
 document.title = `Portofolio ${namaLengkap}`;
-updateElementById("footer", footerText + '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.linkedin.com/in/satrianug/">LinkedIn</a>&nbsp;|&nbsp;&nbsp;<a href="mailto:satrianug@live.com">satrianug@live.com</a>');
+updateElementById("footer", footerText + '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.linkedin.com/in/satrianug/">LinkedIn</a>&nbsp;|&nbsp;&nbsp;<a href="mailto:therealsatria@gmail.com">therealsatria@gmail.com</a>');
 updateElementById("deskripsi", deskripsi);
 updateElementById("namalengkap", namaLengkap);
 
