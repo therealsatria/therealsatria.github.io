@@ -1,75 +1,134 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portofolio [Nama Anda]</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-</head>
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="#" id="name1"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#tentang">Tentang Saya</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#proyek">Proyek</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#kontak">Kontak</a>
-              </li>
-            </ul>
+      <div class="container">
+        <a class="navbar-brand" href="#" id="name"></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#tentang">Tentang Saya</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#proyek">Proyek</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#kontak">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="hero" class="jumbotron text-center">
+      <div class="container">
+        <h1 id="name"></h1>
+        <p class="lead">Backend Developer .NET</p>
+        <!-- <img
+          src="foto-profil.jpg"
+          alt="Foto Profil"
+          class="rounded-circle img-thumbnail"
+          width="200"
+        /> -->
+      </div>
+    </section>
+
+    <section id="tentang" class="py-5 bg-light">
+      <div class="container">
+        <h2>Tentang Saya</h2>
+        <p>
+          Deskripsi singkat tentang diri Anda, keahlian, dan pengalaman sebagai
+          backend developer .NET.
+        </p>
+      </div>
+    </section>
+
+    <section id="proyek" class="py-5">
+      <div class="container">
+        <h2>Proyek</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <!-- <img
+                src="gambar-proyek1.jpg"
+                class="card-img-top"
+                alt="Proyek 1"
+              /> -->
+              <div class="card-body">
+                <h5 class="card-title">Nama Proyek 1</h5>
+                <p class="card-text">Deskripsi singkat proyek 1.</p>
+                <a href="#" class="btn btn-primary">Lihat Detail</a>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-      
-      <section id="hero" class="jumbotron text-center">
-          <div class="container">
-              <h1>[Nama Anda]</h1>
-              <p class="lead">Backend Developer .NET</p>
-              <img src="foto-profil.jpg" alt="Foto Profil" class="rounded-circle img-thumbnail" width="200">
-          </div>
-      </section>
-      
-      <section id="tentang" class="py-5 bg-light">
-          <div class="container">
-              <h2>Tentang Saya</h2>
-              <p>Deskripsi singkat tentang diri Anda, keahlian, dan pengalaman sebagai backend developer .NET.</p>
-          </div>
-      </section>
-      
-      <section id="proyek" class="py-5">
-          <div class="container">
-              <h2>Proyek</h2>
-              <div class="row">
-                  <div class="col-md-4">
-                      <div class="card">
-                          <img src="gambar-proyek1.jpg" class="card-img-top" alt="Proyek 1">
-                          <div class="card-body">
-                              <h5 class="card-title">Nama Proyek 1</h5>
-                              <p class="card-text">Deskripsi singkat proyek 1.</p>
-                              <a href="#" class="btn btn-primary">Lihat Detail</a>
-                          </div>
-                      </div>
-                  </div>
-                  </div>
-          </div>
-      </section>
-      
-      <footer id="kontak" class="py-3 bg-dark text-white text-center">
-          <div class="container">
-              <p>Hubungi saya di [email protected] atau [nomor telepon]</p>
-          </div>
-      </footer>
-</body>
+      </div>
+    </section>
+
+    <footer id="kontak" class="py-3 bg-dark text-white text-center">
+      <div class="container">
+        <a id="footer"></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <i class="fab fa-linkedin"></i>&nbsp;
+        <a
+          href="https://www.linkedin.com/in/satrianug/"
+          class="text-white"
+          >LinkedIn</a>
+        &nbsp;|&nbsp;&nbsp;<i class="fas fa-envelope"></i>&nbsp<a href="mailto:satrianug@live.com"> satrianug@live.com</a>
+      </div>
+    </footer>
+  </body>
 </html>
+
+<script>
+  let namaDepan = "Satria";
+  let namaBelakang = "Nugraha";
+  let namaLengkap = `${namaDepan} ${namaBelakang}`;
+  let footerText = `© ${new Date().getFullYear()} ${namaLengkap}`;
+
+  function updateElementById(id, value) {
+    let element = document.getElementById(id);
+    if (element) {
+      element.textContent = value;
+    }
+  }
+
+  // Example usage:
+  updateElementById("name", namaLengkap);
+  updateElementById("footer", footerText);
+</script>
