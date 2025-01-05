@@ -1,69 +1,64 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Laragon</title>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satria Nugraha - Back-end Developer</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
 
-        <link href="https://fonts.googleapis.com/css?family=Karla:400" rel="stylesheet" type="text/css">
+    <header>
+        <h1>Satria Nugraha</h1>
+        <h2>Back-end Developer</h2>
+    </header>
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+    <nav>
+        <ul>
+            <li><a href="#about">Tentang Saya</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Karla';
-            }
+    <main>
+        <section id="about">
+            <h2>Tentang Saya</h2>
+            <p>Deskripsi singkat tentang dirimu, pengalaman, dan minat sebagai seorang back-end developer.</p>
+            <img src="foto.jpg" alt="Foto Satria Nugraha">
+        </section>
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+        <section id="projects">
+            <h2>Proyek</h2>
+            <ul>
+                <li>
+                    <h3>Proyek 1</h3>
+                    <p>Deskripsi singkat proyek 1.</p>
+                    <a href="link-ke-repo-proyek-1">Lihat di GitHub</a>
+                </li>
+                </ul>
+        </section>
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+        <section id="skills">
+            <h2>Keahlian</h2>
+            <ul>
+                <li>Python</li>
+                <li>Django</li>
+                <li>Node.js</li>
+                </ul>
+        </section>
 
-            .title {
-                font-size: 96px;
-            }
+        <section id="contact">
+            <h2>Kontak</h2>
+            <p>Informasi kontak: email, nomor telepon, profil LinkedIn, dll.</p>
+            <form>
+                </form>
+        </section>
+    </main>
 
-            .opt {
-                margin-top: 30px;
-            }
+    <footer>
+        <p>&copy; Satria Nugraha 2023</p>
+    </footer>
 
-            .opt a {
-              text-decoration: none;
-              font-size: 150%;
-            }
-            
-            a:hover {
-              color: red;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title" title="Laragon">Laragon</div>
-     
-                <div class="info"><br />
-                      <?php print($_SERVER['SERVER_SOFTWARE']); ?><br />
-                      PHP version: <?php print phpversion(); ?>   <span><a title="phpinfo()" href="/?q=info">info</a></span><br />
-                      Document Root: <?php print ($_SERVER['DOCUMENT_ROOT']); ?><br />
-
-                </div>
-                <div class="opt">
-                  <div><a title="Getting Started" href="https://laragon.org/docs">Getting Started</a></div>
-                </div>
-            </div>
-
-        </div>
-    </body>
+</body>
 </html>
