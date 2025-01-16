@@ -23,6 +23,22 @@ updateElementById("deskripsi", deskripsi);
 updateElementById("deskripsi2", deskripsi2);
 updateElementById("namalengkap", namaLengkap);
 
+document.addEventListener("DOMContentLoaded", function () {
+  const progressBars = document.querySelectorAll(".progress-bar");
+  progressBars.forEach((bar) => {
+    let value = 0;
+    const target = parseInt(bar.getAttribute("aria-valuenow"));
+    const interval = setInterval(() => {
+      if (value >= 80) {
+        value = 70;
+      } else {
+        value += 0.3;
+      }
+      bar.style.width = value + "%";
+    }, 80);
+  });
+});
+
 
 
 
