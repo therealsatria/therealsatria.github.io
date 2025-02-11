@@ -1,0 +1,23 @@
+body {
+    background-color: #f2f2f2;
+  }
+  
+  #canvas {
+    border: 1px solid #000;
+  }
+  
+  #fly-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #fly-button:active {
+    background-color: #ffa07a;
+  }
