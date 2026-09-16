@@ -13,17 +13,26 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# --- AI crawlers (training) ---
-# Allow crawling but opt out of AI training.
-# This lets AI search engines index content for citations
-# while preventing use in model training datasets.
+# --- AI crawlers (search & citations) ---
+# Allowing these improves visibility in AI-generated answers
+# from ChatGPT, Claude, Perplexity, Google AI Overviews, etc.
 User-agent: GPTBot
 Allow: /
-Disallow: /llms-full.txt
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
 
 User-agent: ClaudeBot
 Allow: /
-Disallow: /llms-full.txt
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
 
 User-agent: PerplexityBot
 Allow: /
@@ -31,12 +40,17 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# --- AI crawlers (blocked from training) ---
-User-agent: CCBot
-Disallow: /
+User-agent: Applebot-Extended
+Allow: /
 
-User-agent: anthropic-ai
-Disallow: /
+User-agent: cohere-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
 
 # --- Default ---
 User-agent: *

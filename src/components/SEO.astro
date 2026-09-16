@@ -1,7 +1,10 @@
 ---
 // =============================================================
 // SEO.astro — Centralised SEO, Open Graph, Twitter Cards,
-// and JSON-LD structured data for the entire site.
+// geo tags, and JSON-LD structured data for the entire site.
+//
+// Usage:
+//   <SEO title="..." description="..." ogType="profile" />
 // =============================================================
 
 interface Props {
@@ -11,6 +14,7 @@ interface Props {
   ogImage?: string;
   ogType?: 'website' | 'profile' | 'article';
   noindex?: boolean;
+  keywords?: string[];
 }
 
 const {
@@ -20,24 +24,35 @@ const {
   ogImage = '/og-image.png',
   ogType = 'website',
   noindex = false,
+  keywords = [],
 } = Astro.props;
 
+// -------------------------------------------------------------
+// Canonical URL resolution
+// -------------------------------------------------------------
 const siteUrl = Astro.site ?? new URL('https://therealsatria.github.io');
 const canonicalURL = canonical
   ? new URL(canonical, siteUrl)
   : new URL(Astro.url.pathname, siteUrl);
-
 const ogImageURL = new URL(ogImage, siteUrl);
 
-// =============================================================
+// -------------------------------------------------------------
+// Geo coordinates — Lamongan, East Java, Indonesia
+// -------------------------------------------------------------
+const GEO = {
+  region: 'ID-JI',
+  placename: 'Lamongan, East Java, Indonesia',
+  lat: '-7.1225',
+  lng: '112.3828',
+};
+
+// -------------------------------------------------------------
 // JSON-LD @graph — semua entitas saling terhubung via @id
-// =============================================================
+// -------------------------------------------------------------
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
-    // ---------------------------------------------------------
     // 1. Person — entitas utama
-    // ---------------------------------------------------------
     {
       '@type': 'Person',
       '@id': `${siteUrl.href}#person`,
@@ -99,7 +114,6 @@ const structuredData = {
           name: 'Jombang, East Java, Indonesia',
         },
       },
-      alumniOf: [],
       hasOccupation: {
         '@type': 'Occupation',
         name: 'Software Developer',
@@ -127,14 +141,12 @@ const structuredData = {
       },
     },
 
-    // ---------------------------------------------------------
-    // 2. ProfilePage — menandai halaman ini sebagai profil resmi
-    // ---------------------------------------------------------
+    // 2. ProfilePage
     {
       '@type': 'ProfilePage',
       '@id': `${siteUrl.href}#profilepage`,
       url: siteUrl.href,
-      name: `${title}`,
+      name: title,
       description: description,
       dateCreated: '2026-01-01T00:00:00+07:00',
       dateModified: new Date().toISOString(),
@@ -147,14 +159,12 @@ const structuredData = {
       },
     },
 
-    // ---------------------------------------------------------
-    // 3. WebSite — properti situs
-    // ---------------------------------------------------------
+    // 3. WebSite
     {
       '@type': 'WebSite',
       '@id': `${siteUrl.href}#website`,
       url: siteUrl.href,
-      name: 'Satria Nugraha — Personal Portfolio',
+      name: 'Satria Nugraha — Software Developer & IT Professional',
       description:
         'Personal portfolio and digital CV of Satria Nugraha, a software developer and IT infrastructure professional.',
       publisher: { '@id': `${siteUrl.href}#person` },
@@ -163,9 +173,7 @@ const structuredData = {
       copyrightHolder: { '@id': `${siteUrl.href}#person` },
     },
 
-    // ---------------------------------------------------------
-    // 4. BreadcrumbList — navigasi terstruktur
-    // ---------------------------------------------------------
+    // 4. BreadcrumbList
     {
       '@type': 'BreadcrumbList',
       '@id': `${siteUrl.href}#breadcrumb`,
@@ -179,9 +187,7 @@ const structuredData = {
       ],
     },
 
-    // ---------------------------------------------------------
-    // 5. ItemList — daftar proyek sebagai entitas terpisah
-    // ---------------------------------------------------------
+    // 5. ItemList — daftar proyek
     {
       '@type': 'ItemList',
       '@id': `${siteUrl.href}#projects`,
@@ -222,14 +228,27 @@ const structuredData = {
 ---
 
 <!-- ========================================================= -->
-<!-- Basic meta -->
+<!-- Charset & viewport -->
+<!-- ========================================================= -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- ========================================================= -->
+<!-- Title & description -->
 <!-- ========================================================= -->
 <title>{title}</title>
 <meta name="description" content={description} />
+
+<!-- ========================================================= -->
+<!-- Author & keywords -->
+<!-- ========================================================= -->
 <meta name="author" content="Satria Nugraha" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+
+<!-- ========================================================= -->
+<!-- Theme colour -->
+<!-- ========================================================= -->
 <meta name="theme-color" content="#ffffff" />
-<meta charset="utf-8" />
 
 <!-- ========================================================= -->
 <!-- Canonical -->
@@ -239,7 +258,19 @@ const structuredData = {
 <!-- ========================================================= -->
 <!-- Robots -->
 <!-- ========================================================= -->
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+{noindex ? (
+  <meta name="robots" content="noindex, nofollow" />
+) : (
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+)}
+
+<!-- ========================================================= -->
+<!-- Geo tags — Lamongan, East Java -->
+<!-- ========================================================= -->
+<meta name="geo.region" content={GEO.region} />
+<meta name="geo.placename" content={GEO.placename} />
+<meta name="geo.position" content={`${GEO.lat};${GEO.lng}`} />
+<meta name="ICBM" content={`${GEO.lat}, ${GEO.lng}`} />
 
 <!-- ========================================================= -->
 <!-- Open Graph -->
@@ -251,7 +282,7 @@ const structuredData = {
 <meta property="og:image" content={ogImageURL.href} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Satria Nugraha — Software Developer & IT Infrastructure Professional" />
+<meta property="og:image:alt" content="Satria Nugraha — Software Developer & IT Professional" />
 <meta property="og:site_name" content="Satria Nugraha" />
 <meta property="og:locale" content="en_US" />
 
@@ -263,14 +294,6 @@ const structuredData = {
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageURL.href} />
 <meta name="twitter:image:alt" content="Satria Nugraha — Software Developer" />
-
-<!-- ========================================================= -->
-<!-- Geo tags (untuk recruiter lokal & internasional) -->
-<!-- ========================================================= -->
-<meta name="geo.region" content="ID-JI" />
-<meta name="geo.placename" content="Lamongan, East Java, Indonesia" />
-<meta name="geo.position" content="-7.1169;112.4163" />
-<meta name="ICBM" content="-7.1169, 112.4163" />
 
 <!-- ========================================================= -->
 <!-- JSON-LD Structured Data -->
