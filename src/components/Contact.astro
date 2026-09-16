@@ -3,7 +3,8 @@ const contacts = [
   {
     label: 'Email',
     value: 'satrianug@live.com',
-    href: 'mailto:satrianug@live.com',
+    emailUser: 'satrianug',
+    emailDomain: 'live.com',
   },
   {
     label: 'WhatsApp',
@@ -42,15 +43,26 @@ const contacts = [
           {contacts.map((item) => (
             <li>
               <span class="contact-label">{item.label}</span>
-              <a
-                href={item.href}
-                target={item.href.startsWith('http') ? '_blank' : undefined}
-                rel={item.href.startsWith('http')
-                  ? 'noopener noreferrer'
-                  : undefined}
-              >
-                {item.value}
-              </a>
+              {item.emailUser ? (
+                <a
+                  href="#"
+                  data-email-user={item.emailUser}
+                  data-email-domain={item.emailDomain}
+                  class="obfuscated-email"
+                >
+                  satrianug [at] live [dot] com
+                </a>
+              ) : (
+                <a
+                  href={item.href}
+                  target={item.href?.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href?.startsWith('http')
+                    ? 'noopener noreferrer'
+                    : undefined}
+                >
+                  {item.value}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -58,3 +70,14 @@ const contacts = [
     </div>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('.obfuscated-email').forEach((element) => {
+    element.addEventListener('click', (event) => {
+      event.preventDefault();
+      const user = element.getAttribute('data-email-user');
+      const domain = element.getAttribute('data-email-domain');
+      if (user && domain) window.location.href = `mailto:${user}@${domain}`;
+    });
+  });
+</script>
