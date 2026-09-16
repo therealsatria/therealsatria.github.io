@@ -22,30 +22,57 @@
     var userAgent = navigator.userAgent;
     if (/Edg\//.test(userAgent)) return 'Microsoft Edge';
     if (/OPR\//.test(userAgent)) return 'Opera';
-    if (/Chrome\//.test(userAgent) && !/Chromium/.test(userAgent)) return 'Google Chrome';
+    if (/Chrome\//.test(userAgent) || /CriOS\//.test(userAgent)) return 'Google Chrome';
     if (/Firefox\//.test(userAgent)) return 'Mozilla Firefox';
     if (/Safari\//.test(userAgent) && !/Chrome\//.test(userAgent)) return 'Safari';
     return 'Unknown browser';
   }
 
+  function getLocalRegion() {
+    try {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone || 'detected region';
+    } catch (error) {
+      return 'detected region';
+    }
+  }
+
   function updateVisitorInfo(locationData) {
     if (!visitorInfo) return;
-    var region = locationData && (locationData.city || locationData.region || locationData.country_name);
+    var region = locationData && (locationData.city || locationData.region || locationData.country);
     var ipAddress = locationData && locationData.ip;
-    var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    visitorInfo.textContent = 'Access from ' + (region || timezone || 'detected region')
+    visitorInfo.textContent = 'Access from ' + (region || getLocalRegion())
       + ' | IP address: ' + (ipAddress || 'unavailable')
       + ' | Browser: ' + getBrowserName();
   }
 
+  function fetchWithTimeout(url, timeout) {
+    return Promise.race([
+      fetch(url, { headers: { 'Accept': 'application/json' } }),
+      new Promise(function (_, reject) {
+        window.setTimeout(function () { reject(new Error('Request timed out')); }, timeout);
+      })
+    ]);
+  }
+
   if (visitorInfo) {
     updateVisitorInfo(null);
-    fetch('https://ipapi.co/json/', { headers: { 'Accept': 'application/json' } })
+    fetchWithTimeout('https://ipwho.is/', 5000)
       .then(function (response) {
         if (!response.ok) throw new Error('Location request failed');
         return response.json();
       })
-      .then(updateVisitorInfo)
+      .then(function (locationData) {
+        if (!locationData.success || !locationData.ip) throw new Error('Invalid location response');
+        updateVisitorInfo(locationData);
+      })
+      .catch(function () {
+        return fetchWithTimeout('https://api.ipify.org?format=json', 5000)
+          .then(function (response) {
+            if (!response.ok) throw new Error('IP request failed');
+            return response.json();
+          })
+          .then(updateVisitorInfo);
+      })
       .catch(function () {
         updateVisitorInfo(null);
       });
