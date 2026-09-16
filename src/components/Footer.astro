@@ -8,36 +8,42 @@ const year = new Date().getFullYear();
       <p>© {year} Satria Nugraha. All rights reserved.</p>
       <div class="visitor-info" aria-label="Visitor information">
         <p id="visitor-timezone">Your timezone: Loading...</p>
+        <p id="local-time">Satria's local time: Loading...</p>
         <p id="visitor-ip">IP address: Loading...</p>
         <p id="visitor-region">Region: Loading...</p>
         <p id="visitor-browser">Browser: Loading...</p>
       </div>
     </div>
-    <ul class="footer-links">
-      <li>
-        <a
-          href="https://github.com/therealsatria"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.linkedin.com/in/satrianug"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-      </li>
-    </ul>
+    <div class="footer-side">
+      <p class="footer-side-label">Connect</p>
+      <ul class="footer-links">
+        <li>
+          <a
+            href="https://github.com/therealsatria"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/satrianug"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <p class="footer-side-note">Remote collaboration and relocation worldwide.</p>
+    </div>
   </div>
 </footer>
 
 <script>
   const timezoneElement = document.getElementById('visitor-timezone');
+  const localTimeElement = document.getElementById('local-time');
   const ipElement = document.getElementById('visitor-ip');
   const regionElement = document.getElementById('visitor-region');
   const browserElement = document.getElementById('visitor-browser');
@@ -45,6 +51,19 @@ const year = new Date().getFullYear();
   if (timezoneElement) {
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     timezoneElement.textContent = `Your timezone: ${timezone || 'Unavailable'}`;
+  }
+
+  if (localTimeElement) {
+    const updateLocalTime = () => {
+      const localTime = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Asia/Jakarta',
+        dateStyle: 'medium',
+        timeStyle: 'short',
+      }).format(new Date());
+      localTimeElement.textContent = `Satria's local time: ${localTime}`;
+    };
+    updateLocalTime();
+    window.setInterval(updateLocalTime, 60000);
   }
 
   if (browserElement) {
