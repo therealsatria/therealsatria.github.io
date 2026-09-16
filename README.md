@@ -1,52 +1,41 @@
-# Hi there! 👋 I'm Satria Nugraha
+### Hi there! 👋 I'm Satria Nugraha
 
-## 💻 Software Developer
+### 💻 Software Developer & IT Professional
 
-I specialize in backend development with a passion for building robust and scalable solutions.
+I enjoy building practical solutions and understanding how systems work — both from the application side and the infrastructure side.  
+I have a solid foundation in programming paradigms and continue to explore modern development practices, including how AI tools can support the software development process.
 
-### 🛠️ Tech Stack
-<p>
-  <img alt=".NET" src="https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white" />
-  <img alt="F#" src="https://img.shields.io/badge/F%23-378BBA?style=flat-square&logo=.net&logoColor=white" />
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" />
-</p>
+### 🛠️ Tech Stack & Interests
 
-#### Backend
-- `.NET` ecosystem
-- `F#` for functional programming exploration
-- RESTful APIs
+**Programming & Development**
+- General understanding of programming paradigms (OOP, functional, procedural)
+- Backend development experience (previously worked with .NET / C#)
+- Familiar with TypeScript and modern web development concepts
+- RESTful API design and integration
 
-#### Frontend
-- `Next.js`
-- `TypeScript`
-- Modern web development
+**AI-Assisted Development**
+- Actively using AI tools to support coding, debugging, and learning (Grok, Kimi, DeepSeek, Google AI Studio, etc.)
+- Exploring how AI can improve productivity in software development workflows
 
-### 🌟 What I Do
+**Infrastructure & Systems**
+- System Administration
+- Cloud Services
+- Microsoft 365
+- Linux
+- Troubleshooting & Root Cause Analysis
 
-- 🎯 Backend Development with .NET
-- 🧮 Functional Programming enthusiast (F#)
-- 🌐 Frontend Development with Next.js & TypeScript
-- 📚 Open Source Contributor
+### 🌟 What I Focus On
 
-### 🤝 Open Source
+- Writing clean and maintainable code
+- Understanding systems from both application and infrastructure perspectives
+- Continuous learning, especially around AI tools for developers
+- Solving real technical problems through structured analysis
 
-All my repositories are open source! Feel free to explore, use, and contribute. I believe in sharing knowledge and helping others learn from my work.
+### 🤝 Open Source & Learning
 
-### 📫 Connect with Me
-
-<div>
-  <a href="https://github.com/therealsatria" target="_blank">
-    <img src="https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white" alt="github" style="margin-bottom: 5px;" />
-  </a>
-</div>
+Most of my repositories are open for learning and experimentation.  
+Feel free to explore, fork, or reach out if you'd like to discuss ideas.
 
 ---
-⭐️ From [therealsatria](https://github.com/therealsatria)
 
-<p>
-  <img alt=".NET" src="https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white" />
-  <img alt="F#" src="https://img.shields.io/badge/F%23-378BBA?style=flat-square&logo=.net&logoColor=white" />
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" />
-</p>
+📫 Reach me on [LinkedIn](https://www.linkedin.com/in/satrianug)
