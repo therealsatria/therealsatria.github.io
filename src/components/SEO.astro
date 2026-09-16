@@ -1,0 +1,297 @@
+---
+// =============================================================
+// SEO.astro — Centralised SEO, Open Graph, Twitter Cards,
+// and JSON-LD structured data for the entire site.
+// =============================================================
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'profile' | 'article';
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = '/og-image.png',
+  ogType = 'website',
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://therealsatria.github.io');
+const canonicalURL = canonical
+  ? new URL(canonical, siteUrl)
+  : new URL(Astro.url.pathname, siteUrl);
+
+const ogImageURL = new URL(ogImage, siteUrl);
+
+// =============================================================
+// JSON-LD @graph — semua entitas saling terhubung via @id
+// =============================================================
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    // ---------------------------------------------------------
+    // 1. Person — entitas utama
+    // ---------------------------------------------------------
+    {
+      '@type': 'Person',
+      '@id': `${siteUrl.href}#person`,
+      name: 'Satria Nugraha',
+      givenName: 'Satria',
+      familyName: 'Nugraha',
+      alternateName: 'therealsatria',
+      jobTitle: 'Software Developer & IT Infrastructure Professional',
+      description:
+        'Software developer and IT infrastructure professional based in Lamongan, East Java, Indonesia. Focused on backend development, system administration, troubleshooting, and root cause analysis. Open to remote work and relocation.',
+      url: siteUrl.href,
+      image: {
+        '@type': 'ImageObject',
+        '@id': `${siteUrl.href}#profile-image`,
+        url: ogImageURL.href,
+        caption: 'Satria Nugraha',
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Lamongan',
+        addressRegion: 'East Java',
+        addressCountry: 'ID',
+      },
+      nationality: {
+        '@type': 'Country',
+        name: 'Indonesia',
+      },
+      knowsLanguage: [
+        { '@type': 'Language', name: 'Indonesian', alternateName: 'id' },
+        { '@type': 'Language', name: 'English', alternateName: 'en' },
+      ],
+      knowsAbout: [
+        'Software Development',
+        'Backend Development',
+        'REST API Development',
+        'System Administration',
+        'IT Infrastructure',
+        'Linux Administration',
+        'Windows Server Administration',
+        'Microsoft 365 Administration',
+        'Active Directory',
+        'Networking (TCP/IP, DNS, DHCP)',
+        'Troubleshooting',
+        'Root Cause Analysis',
+        'PowerShell Scripting',
+        'Bash Scripting',
+        'Technical Documentation',
+        'Incident Management',
+      ],
+      sameAs: [
+        'https://www.linkedin.com/in/satrianug',
+        'https://github.com/therealsatria',
+      ],
+      worksFor: {
+        '@type': 'Organization',
+        name: 'PT Dwijaya Adiwahana (ISUZU Jombang)',
+        location: {
+          '@type': 'Place',
+          name: 'Jombang, East Java, Indonesia',
+        },
+      },
+      alumniOf: [],
+      hasOccupation: {
+        '@type': 'Occupation',
+        name: 'Software Developer',
+        occupationLocation: {
+          '@type': 'Country',
+          name: 'Indonesia',
+        },
+        skills:
+          'Backend Development, System Administration, IT Infrastructure, Troubleshooting, Root Cause Analysis',
+      },
+      seeks: {
+        '@type': 'Demand',
+        name: 'Remote work and relocation opportunities',
+        description:
+          'Open to remote roles and relocation to GCC countries (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, and worldwide.',
+        availability: 'https://schema.org/InStock',
+        areaServed: [
+          { '@type': 'Country', name: 'Kuwait' },
+          { '@type': 'Country', name: 'Saudi Arabia' },
+          { '@type': 'Country', name: 'United Arab Emirates' },
+          { '@type': 'Country', name: 'Japan' },
+          { '@type': 'Country', name: 'Malaysia' },
+          { '@type': 'Country', name: 'Singapore' },
+        ],
+      },
+    },
+
+    // ---------------------------------------------------------
+    // 2. ProfilePage — menandai halaman ini sebagai profil resmi
+    // ---------------------------------------------------------
+    {
+      '@type': 'ProfilePage',
+      '@id': `${siteUrl.href}#profilepage`,
+      url: siteUrl.href,
+      name: `${title}`,
+      description: description,
+      dateCreated: '2026-01-01T00:00:00+07:00',
+      dateModified: new Date().toISOString(),
+      mainEntity: { '@id': `${siteUrl.href}#person` },
+      isPartOf: { '@id': `${siteUrl.href}#website` },
+      inLanguage: 'en',
+      potentialAction: {
+        '@type': 'ReadAction',
+        target: [siteUrl.href],
+      },
+    },
+
+    // ---------------------------------------------------------
+    // 3. WebSite — properti situs
+    // ---------------------------------------------------------
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl.href}#website`,
+      url: siteUrl.href,
+      name: 'Satria Nugraha — Personal Portfolio',
+      description:
+        'Personal portfolio and digital CV of Satria Nugraha, a software developer and IT infrastructure professional.',
+      publisher: { '@id': `${siteUrl.href}#person` },
+      inLanguage: 'en',
+      copyrightYear: new Date().getFullYear(),
+      copyrightHolder: { '@id': `${siteUrl.href}#person` },
+    },
+
+    // ---------------------------------------------------------
+    // 4. BreadcrumbList — navigasi terstruktur
+    // ---------------------------------------------------------
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${siteUrl.href}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: siteUrl.href,
+        },
+      ],
+    },
+
+    // ---------------------------------------------------------
+    // 5. ItemList — daftar proyek sebagai entitas terpisah
+    // ---------------------------------------------------------
+    {
+      '@type': 'ItemList',
+      '@id': `${siteUrl.href}#projects`,
+      name: 'Selected Projects',
+      description:
+        'Selected software development and IT infrastructure projects by Satria Nugraha.',
+      numberOfItems: 2,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          item: {
+            '@type': 'SoftwareSourceCode',
+            name: 'Windows Server Hardening Script',
+            description:
+              'A PowerShell toolkit that applies a baseline security configuration to Windows Server hosts.',
+            programmingLanguage: 'PowerShell',
+            codeRepository: 'https://github.com/therealsatria',
+            author: { '@id': `${siteUrl.href}#person` },
+          },
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          item: {
+            '@type': 'WebSite',
+            name: 'Personal Portfolio Website',
+            description:
+              'A single-page, dependency-free landing page built with semantic HTML, modern CSS, and vanilla JavaScript.',
+            url: siteUrl.href,
+            author: { '@id': `${siteUrl.href}#person` },
+          },
+        },
+      ],
+    },
+  ],
+};
+---
+
+<!-- ========================================================= -->
+<!-- Basic meta -->
+<!-- ========================================================= -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content="Satria Nugraha" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#ffffff" />
+<meta charset="utf-8" />
+
+<!-- ========================================================= -->
+<!-- Canonical -->
+<!-- ========================================================= -->
+<link rel="canonical" href={canonicalURL.href} />
+
+<!-- ========================================================= -->
+<!-- Robots -->
+<!-- ========================================================= -->
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- ========================================================= -->
+<!-- Open Graph -->
+<!-- ========================================================= -->
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL.href} />
+<meta property="og:image" content={ogImageURL.href} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Satria Nugraha — Software Developer & IT Infrastructure Professional" />
+<meta property="og:site_name" content="Satria Nugraha" />
+<meta property="og:locale" content="en_US" />
+
+<!-- ========================================================= -->
+<!-- Twitter Card -->
+<!-- ========================================================= -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageURL.href} />
+<meta name="twitter:image:alt" content="Satria Nugraha — Software Developer" />
+
+<!-- ========================================================= -->
+<!-- Geo tags (untuk recruiter lokal & internasional) -->
+<!-- ========================================================= -->
+<meta name="geo.region" content="ID-JI" />
+<meta name="geo.placename" content="Lamongan, East Java, Indonesia" />
+<meta name="geo.position" content="-7.1169;112.4163" />
+<meta name="ICBM" content="-7.1169, 112.4163" />
+
+<!-- ========================================================= -->
+<!-- JSON-LD Structured Data -->
+<!-- ========================================================= -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(structuredData, null, 2)}
+/>
+
+<!-- ========================================================= -->
+<!-- Sitemap & LLMs discovery -->
+<!-- ========================================================= -->
+<link
+  rel="sitemap"
+  type="application/xml"
+  title="Sitemap"
+  href={`${siteUrl.href}sitemap-index.xml`}
+/>
+<link
+  rel="alternate"
+  type="text/markdown"
+  title="LLM-friendly content map"
+  href={`${siteUrl.href}llms.txt`}
+/>

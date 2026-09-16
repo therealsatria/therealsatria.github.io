@@ -1,4 +1,46 @@
+# =============================================================
+# robots.txt — Satria Nugraha
+# https://therealsatria.github.io/robots.txt
+# =============================================================
+
+# --- Search engine crawlers ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# --- AI crawlers (training) ---
+# Allow crawling but opt out of AI training.
+# This lets AI search engines index content for citations
+# while preventing use in model training datasets.
+User-agent: GPTBot
+Allow: /
+Disallow: /llms-full.txt
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /llms-full.txt
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# --- AI crawlers (blocked from training) ---
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# --- Default ---
 User-agent: *
 Allow: /
 
+# --- Sitemap ---
 Sitemap: https://therealsatria.github.io/sitemap-index.xml

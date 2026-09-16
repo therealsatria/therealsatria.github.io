@@ -1,0 +1,54 @@
+# Satria Nugraha — Software Developer & IT Infrastructure Professional
+
+> Personal portfolio and digital CV of Satria Nugraha, a software developer and IT infrastructure professional based in Lamongan, East Java, Indonesia. Focused on backend development, system administration, troubleshooting, and root cause analysis. Open to remote work and relocation to GCC countries (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, and worldwide.
+
+## About
+
+Satria Nugraha is a software developer and IT infrastructure professional with hands-on experience across backend development, system administration, and technical consulting. His work centres on building dependable systems, diagnosing complex issues, and improving operational reliability.
+
+He has supported healthcare IT environments, delivered technical solutions for enterprise clients, and developed backend services in project-based settings. His approach is methodical: understand the root cause, fix it properly, and document the outcome.
+
+Currently based in Lamongan, East Java, Indonesia. Open to international opportunities — both remote and relocation.
+
+## Key Facts
+
+- **Name:** Satria Nugraha
+- **Title:** Software Developer & IT Infrastructure Professional
+- **Location:** Lamongan, East Java, Indonesia
+- **Primary focus:** Software Development (Backend)
+- **Secondary focus:** System Administration & IT Infrastructure
+- **Availability:** Remote work and relocation
+- **Target regions:** GCC (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, worldwide
+- **Languages:** Indonesian (native), English (professional)
+- **Contact:** satrianug@live.com | WhatsApp +62 813-3287-5050
+
+## Experience
+
+- **Sales Executive** at PT Dwijaya Adiwahana (ISUZU Jombang) — Mar 2026–Present
+- **Technical Consultant** at Solutionlabs Group — Aug 2024–Nov 2025
+- **Backend Developer** (Project-based) at Solutionlabs Group — Nov 2024–Jan 2025
+- **Technical Consultant** at PT Mitra Integrasi Informatika (Metrodata Group) — Jun 2023–Jun 2024
+- **IT System Administrator** at Mutiara Hati Hospital — Jan 2020–Jun 2023
+
+## Skills
+
+- **Development:** Backend development, REST APIs, OOP, MVC, relational databases & SQL, Git & GitHub, debugging, HTML/CSS/JavaScript
+- **Infrastructure:** Linux server administration, Windows Server administration, Microsoft 365, Active Directory, networking (TCP/IP, DNS, DHCP), cloud & VPS, backup & recovery
+- **Tools & Practices:** Troubleshooting, root cause analysis, PowerShell & Bash scripting, technical documentation, incident handling, end-user support, IT asset management
+
+## Selected Projects
+
+- [Windows Server Hardening Script](https://github.com/therealsatria): A PowerShell toolkit that applies a baseline security configuration to Windows Server hosts — account and audit policies, SMB signing, and unnecessary service reduction.
+- [Personal Portfolio Website](https://therealsatria.github.io/): A single-page, dependency-free landing page built with semantic HTML, modern CSS, and vanilla JavaScript.
+
+## Contact
+
+- **Email:** satrianug@live.com
+- **WhatsApp:** +62 813-3287-5050
+- **LinkedIn:** https://www.linkedin.com/in/satrianug
+- **GitHub:** https://github.com/therealsatria
+
+## Optional
+
+- [Full LLM-friendly content](https://therealsatria.github.io/llms-full.txt): Complete markdown version of the portfolio content for AI consumption.
+- [Sitemap](https://therealsatria.github.io/sitemap-index.xml): XML sitemap for search engines.
