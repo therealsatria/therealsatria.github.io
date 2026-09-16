@@ -555,6 +555,11 @@ textarea:focus-visible {
   font-size: 0.85rem;
   color: var(--muted);
 }
+.visitor-info {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
 .footer-links {
   display: flex;
   flex-wrap: wrap;

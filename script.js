@@ -14,7 +14,45 @@
   }
 
   /* -------------------------------------------------------
-     2. Mobile navigation toggle
+     2. Visitor information
+     ------------------------------------------------------- */
+  var visitorInfo = document.getElementById('visitor-info');
+
+  function getBrowserName() {
+    var userAgent = navigator.userAgent;
+    if (/Edg\//.test(userAgent)) return 'Microsoft Edge';
+    if (/OPR\//.test(userAgent)) return 'Opera';
+    if (/Chrome\//.test(userAgent) && !/Chromium/.test(userAgent)) return 'Google Chrome';
+    if (/Firefox\//.test(userAgent)) return 'Mozilla Firefox';
+    if (/Safari\//.test(userAgent) && !/Chrome\//.test(userAgent)) return 'Safari';
+    return 'Unknown browser';
+  }
+
+  function updateVisitorInfo(locationData) {
+    if (!visitorInfo) return;
+    var region = locationData && (locationData.city || locationData.region || locationData.country_name);
+    var ipAddress = locationData && locationData.ip;
+    var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    visitorInfo.textContent = 'Access from ' + (region || timezone || 'detected region')
+      + ' | IP address: ' + (ipAddress || 'unavailable')
+      + ' | Browser: ' + getBrowserName();
+  }
+
+  if (visitorInfo) {
+    updateVisitorInfo(null);
+    fetch('https://ipapi.co/json/', { headers: { 'Accept': 'application/json' } })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Location request failed');
+        return response.json();
+      })
+      .then(updateVisitorInfo)
+      .catch(function () {
+        updateVisitorInfo(null);
+      });
+  }
+
+  /* -------------------------------------------------------
+     3. Mobile navigation toggle
      ------------------------------------------------------- */
   var navToggle = document.querySelector('.nav-toggle');
   var siteNav = document.getElementById('site-nav');
@@ -54,7 +92,7 @@
   }
 
   /* -------------------------------------------------------
-     3. Active section highlighting in the navigation
+      4. Active section highlighting in the navigation
      ------------------------------------------------------- */
   var navLinks = Array.prototype.slice.call(
     document.querySelectorAll('.site-nav a[href^="#"]')
@@ -89,7 +127,7 @@
   }
 
   /* -------------------------------------------------------
-     4. Contact form (Formspree-compatible)
+      5. Contact form (Formspree-compatible)
      ------------------------------------------------------- */
   var form = document.getElementById('contact-form');
   var status = document.getElementById('form-status');
