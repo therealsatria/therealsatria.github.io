@@ -1,1283 +1,782 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Satria Nugraha — Software Developer &amp; IT Infrastructure Professional</title>
-<meta name="description" content="Satria Nugraha — Software Developer and IT Infrastructure Professional based in Indonesia. Backend development, system administration, troubleshooting and root cause analysis. Open to remote and relocation opportunities.">
-<meta name="author" content="Satria Nugraha">
-<meta name="theme-color" content="#ffffff">
-
-<!-- Open Graph (safe to update later) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Satria Nugraha — Software Developer &amp; IT Infrastructure Professional">
-<meta property="og:description" content="Backend development, system administration, and reliable IT operations. Open to international remote and relocation opportunities.">
-
-<!-- Fonts: Inter with system-font fallback -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-/* =========================================================
-   1. Design tokens
-   ========================================================= */
-:root {
-  --bg:            #ffffff;
-  --bg-soft:       #f7f8fa;
-  --text:          #141b24;
-  --muted:         #5a6675;
-  --border:        #e3e7ec;
-  --border-strong: #d2d8df;
-  --accent:        #14577f;
-  --accent-dark:   #0f4463;
-  --accent-soft:   #eef4f8;
-
-  --radius: 6px;
-  --container: 1100px;
-  --header-h: 64px;
-
-  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-}
-
-/* =========================================================
-   2. Base / reset
-   ========================================================= */
-*, *::before, *::after { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + 16px);
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font);
-  font-size: 16px;
-  line-height: 1.65;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-img { max-width: 100%; display: block; }
-
-h1, h2, h3, h4 {
-  margin: 0;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-  font-weight: 600;
-  color: var(--text);
-}
-
-p { margin: 0 0 1rem; }
-p:last-child { margin-bottom: 0; }
-
-ul { margin: 0; padding: 0; }
-
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-a:hover { text-decoration: underline; }
-
-/* Visible, consistent keyboard focus */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-
-/* Skip link for keyboard / screen-reader users */
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  background: var(--accent);
-  color: #fff;
-  padding: 10px 16px;
-  z-index: 200;
-  border-radius: 0 0 var(--radius) 0;
-}
-.skip-link:focus { left: 0; }
-
-/* =========================================================
-   3. Layout helpers
-   ========================================================= */
-.container {
-  width: 100%;
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.section {
-  padding: 88px 0;
-  border-bottom: 1px solid var(--border);
-}
-.section:last-of-type { border-bottom: 0; }
-
-/* Small uppercase label above each section title */
-.eyebrow {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 12px;
-}
-
-.section-title {
-  font-size: clamp(1.4rem, 2.6vw, 1.75rem);
-  margin-bottom: 8px;
-}
-
-.section-intro {
-  max-width: 640px;
-  color: var(--muted);
-  margin-bottom: 44px;
-}
-
-/* =========================================================
-   4. Header / navigation
-   ========================================================= */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.94);
-  -webkit-backdrop-filter: saturate(180%) blur(8px);
-  backdrop-filter: saturate(180%) blur(8px);
-  border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: var(--header-h);
-}
-
-.brand {
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--text);
-  text-decoration: none;
-}
-.brand:hover { text-decoration: none; color: var(--accent); }
-
-.site-nav ul {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  list-style: none;
-}
-
-.site-nav a {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--muted);
-  padding: 6px 0;
-  border-bottom: 2px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-.site-nav a:hover {
-  color: var(--text);
-  text-decoration: none;
-}
-.site-nav a.is-active {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-/* Mobile menu button (hidden on desktop) */
-.nav-toggle {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 8px 12px;
-  font-family: inherit;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text);
-  cursor: pointer;
-}
-.nav-toggle:hover { border-color: var(--border-strong); }
-
-/* =========================================================
-   5. Hero
-   ========================================================= */
-.hero {
-  padding: 96px 0 88px;
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-  gap: 64px;
-  align-items: start;
-}
-
-.hero-name {
-  font-size: clamp(2rem, 5vw, 2.85rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  margin-bottom: 12px;
-}
-
-.hero-title {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin: 0 0 20px;
-}
-
-.hero-lead {
-  font-size: 1.05rem;
-  color: var(--muted);
-  max-width: 560px;
-  margin-bottom: 32px;
-}
-
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-/* Quick facts panel */
-.facts {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px 24px 8px;
-}
-.facts h2 {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 16px;
-}
-.facts dl { margin: 0; }
-.facts dt {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 2px;
-}
-.facts dd {
-  margin: 0 0 16px;
-  font-size: 0.925rem;
-  color: var(--text);
-}
-.facts dd:last-child { margin-bottom: 0; }
-
-/* =========================================================
-   6. Buttons
-   ========================================================= */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 11px 18px;
-  font-family: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1.2;
-  border-radius: var(--radius);
-  border: 1px solid transparent;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-}
-.btn:hover { text-decoration: none; }
-
-.btn-primary {
-  background: var(--accent);
-  color: #fff;
-}
-.btn-primary:hover { background: var(--accent-dark); color: #fff; }
-
-.btn-outline {
-  background: #fff;
-  color: var(--text);
-  border-color: var(--border-strong);
-}
-.btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-soft);
-}
-
-/* =========================================================
-   7. About
-   ========================================================= */
-.about-body {
-  max-width: 720px;
-  font-size: 1rem;
-  color: var(--muted);
-}
-.about-body strong { color: var(--text); font-weight: 600; }
-
-/* =========================================================
-   8. Skills
-   ========================================================= */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.skill-card {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  background: #fff;
-}
-
-.skill-card h3 {
-  font-size: 0.95rem;
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
-}
-
-.skill-list {
-  list-style: none;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-.skill-list li {
-  position: relative;
-  padding-left: 16px;
-  margin-bottom: 8px;
-}
-.skill-list li:last-child { margin-bottom: 0; }
-.skill-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.62em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--border-strong);
-}
-
-/* =========================================================
-   9. Experience
-   ========================================================= */
-.job {
-  display: grid;
-  grid-template-columns: 250px minmax(0, 1fr);
-  gap: 8px 40px;
-  padding: 32px 0;
-  border-top: 1px solid var(--border);
-}
-.job:first-of-type { border-top: 1px solid var(--border-strong); }
-
-.job-role {
-  font-size: 1.025rem;
-  margin-bottom: 4px;
-}
-.job-company {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin: 0 0 6px;
-}
-.job-period {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 0;
-}
-
-.job-points {
-  list-style: none;
-  font-size: 0.925rem;
-  color: var(--muted);
-}
-.job-points li {
-  position: relative;
-  padding-left: 18px;
-  margin-bottom: 9px;
-}
-.job-points li:last-child { margin-bottom: 0; }
-.job-points li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.68em;
-  width: 6px;
-  height: 1px;
-  background: var(--border-strong);
-}
-
-/* =========================================================
-   10. Projects
-   ========================================================= */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-}
-
-.project {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  background: #fff;
-  transition: border-color 0.15s ease;
-}
-.project:hover { border-color: var(--border-strong); }
-
-.project-title {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.project-desc {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-bottom: 18px;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  list-style: none;
-  margin-bottom: 18px;
-}
-.tags li {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--muted);
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 3px 9px;
-}
-
-.project-links {
-  margin-top: auto;
-  font-size: 0.875rem;
-  font-weight: 600;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding-top: 4px;
-}
-
-/* =========================================================
-   11. Contact
-   ========================================================= */
-.contact-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 56px;
-  align-items: start;
-}
-
-.contact-list {
-  list-style: none;
-  margin: 28px 0 0;
-}
-.contact-list li {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.925rem;
-}
-.contact-list li:first-child { border-top: 1px solid var(--border); }
-
-.contact-label {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 3px;
-}
-
-/* Form */
-.contact-form { display: grid; gap: 16px; }
-
-.field { display: grid; gap: 6px; }
-.field label {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text);
-}
-.field input,
-.field textarea {
-  width: 100%;
-  font-family: inherit;
-  font-size: 0.925rem;
-  color: var(--text);
-  background: #fff;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius);
-  padding: 10px 12px;
-  transition: border-color 0.15s ease;
-}
-.field input:hover,
-.field textarea:hover { border-color: #b9c2cc; }
-.field textarea { resize: vertical; min-height: 120px; }
-
-.form-status {
-  font-size: 0.875rem;
-  margin: 0;
-  min-height: 1.2em;
-}
-.form-status[data-state="success"] { color: #1d6b4a; }
-.form-status[data-state="error"]   { color: #a3341f; }
-
-/* Honeypot field — hidden from humans, visible to bots */
-.hp-field {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-/* =========================================================
-   12. Footer
-   ========================================================= */
-.site-footer {
-  padding: 40px 0;
-  background: var(--bg-soft);
-  border-top: 1px solid var(--border);
-}
-.footer-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  list-style: none;
-}
-
-/* =========================================================
-   13. Responsive
-   ========================================================= */
-@media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .job { grid-template-columns: 1fr; gap: 16px; }
-}
-
-@media (max-width: 760px) {
-  .section { padding: 64px 0; }
-  .hero { padding: 64px 0 60px; }
-
-  /* Mobile navigation */
-  .nav-toggle { display: inline-flex; }
-
-  .site-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: none;
-    background: #fff;
-    border-bottom: 1px solid var(--border);
-    padding: 8px 0 12px;
-  }
-  .site-nav.is-open { display: block; }
-
-  .site-nav ul {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 0 24px;
-  }
-  .site-nav a {
-    display: block;
-    padding: 13px 0;
-    border-bottom: 1px solid var(--border);
-    border-left: 0;
-  }
-  .site-nav li:last-child a { border-bottom: 0; }
-  .site-nav a.is-active { border-bottom-color: var(--border); color: var(--accent); }
-}
-
-@media (max-width: 480px) {
-  .hero-cta .btn { width: 100%; }
-  .footer-inner { flex-direction: column; align-items: flex-start; }
-}
-
-/* =========================================================
-   14. Reduced motion & print
-   ========================================================= */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { transition: none !important; }
-}
-
-@media print {
-  .site-header,
-  .hero-cta,
-  .contact-form,
-  .skip-link { display: none !important; }
-
-  body { color: #000; background: #fff; font-size: 12pt; }
-  .section { padding: 16px 0; border: 0; }
-  .hero { padding: 0 0 16px; background: none; border-bottom: 1px solid #ccc; }
-  .project, .skill-card, .facts { border-color: #ccc; page-break-inside: avoid; }
-  a { color: #000; text-decoration: none; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Satria Nugraha — Software Developer & IT Infrastructure Professional. Backend development, system administration, and Microsoft 365 expertise. Open to international opportunities.">
+  <meta name="author" content="Satria Nugraha">
+  <title>Satria Nugraha — Software Developer & IT Infrastructure Professional</title>
+
+  <!-- ============================================================
+       Satria Nugraha — Personal Landing Page
+       Pure HTML + CSS + Vanilla JavaScript (no frameworks)
+       Deploy: GitHub Pages (see README instructions in <footer> comment)
+       ============================================================ -->
+
+  <style>
+    /* ============================================================
+       1. DESIGN TOKENS & RESET
+       Neutral corporate palette, generous whitespace, one accent.
+       ============================================================ */
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-alt: #f7f7f5;
+      --color-text: #1a1d21;
+      --color-text-muted: #5a6169;
+      --color-border: #e4e4e1;
+      --color-accent: #1f5fa8;           /* restrained corporate blue */
+      --color-accent-dark: #17487f;
+      --font-sans: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --max-width: 1080px;
+      --space-section: 5.5rem;
+      --radius: 6px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1, h2, h3 { line-height: 1.25; margin: 0 0 0.75rem; font-weight: 700; }
+    p { margin: 0 0 1rem; }
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover, a:focus { text-decoration: underline; }
+    ul { margin: 0; padding-left: 1.25rem; }
+    li { margin-bottom: 0.4rem; }
+
+    /* Accessible skip link (visible on keyboard focus only) */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--color-accent);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      z-index: 100;
+    }
+    .skip-link:focus { left: 0; }
+
+    /* ============================================================
+       2. LAYOUT
+       ============================================================ */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section { padding: var(--space-section) 0; }
+    section:nth-of-type(even) { background: var(--color-bg-alt); }
+
+    .section-title {
+      font-size: 1.6rem;
+      letter-spacing: 0.01em;
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    /* ============================================================
+       3. NAVIGATION — sticky, minimal
+       ============================================================ */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .site-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .site-nav .brand {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      color: var(--color-text);
+    }
+    .site-nav .brand:hover { text-decoration: none; }
+    .site-nav ul {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .site-nav ul a {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+    .site-nav ul a:hover,
+    .site-nav ul a:focus,
+    .site-nav ul a.active {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    /* Hamburger for mobile */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 0.4rem 0.6rem;
+      font-size: 1.1rem;
+      color: var(--color-text);
+      cursor: pointer;
+    }
+
+    /* ============================================================
+       4. HERO
+       ============================================================ */
+    .hero {
+      padding: 7rem 0 6rem;
+      background: var(--color-bg);
+    }
+    .hero .kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 { font-size: 2.6rem; margin-bottom: 0.5rem; }
+    .hero .title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .hero .tagline {
+      max-width: 620px;
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2.25rem;
+    }
+    .hero .cta-row { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .btn-primary { background: var(--color-accent); color: #fff; }
+    .btn-primary:hover,
+    .btn-primary:focus { background: var(--color-accent-dark); text-decoration: none; }
+    .btn-outline {
+      background: transparent;
+      color: var(--color-text);
+      border-color: var(--color-border);
+    }
+    .btn-outline:hover,
+    .btn-outline:focus { border-color: var(--color-accent); color: var(--color-accent); text-decoration: none; }
+
+    /* ============================================================
+       5. ABOUT
+       ============================================================ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .about-facts {
+      list-style: none;
+      padding: 0;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      background: var(--color-bg);
+    }
+    .about-facts li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.92rem;
+      margin: 0;
+    }
+    .about-facts li:last-child { border-bottom: none; }
+    .about-facts .label { color: var(--color-text-muted); flex-shrink: 0; }
+    .about-facts .value { text-align: right; }
+
+    /* ============================================================
+       6. SKILLS
+       ============================================================ */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .skill-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      background: var(--color-bg);
+    }
+    .skill-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.9rem;
+      color: var(--color-accent);
+    }
+    .skill-list {
+      list-style: none;
+      padding: 0;
+    }
+    .skill-list li {
+      padding: 0.3rem 0;
+      font-size: 0.93rem;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    .skill-list li::before {
+      content: "—";
+      color: var(--color-accent);
+      margin-right: 0.5rem;
+    }
+
+    /* ============================================================
+       7. EXPERIENCE — timeline, reverse chronological
+       ============================================================ */
+    .job { margin-bottom: 2.75rem; }
+    .job:last-child { margin-bottom: 0; }
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem 1rem;
+      margin-bottom: 0.35rem;
+    }
+    .job-header h3 { font-size: 1.1rem; margin: 0; }
+    .job-period {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .job-company { font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: 0.75rem; }
+    .job ul li { font-size: 0.95rem; }
+
+    /* ============================================================
+       8. PROJECTS — card grid
+       ============================================================ */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      background: var(--color-bg);
+      padding: 1.5rem;
+      transition: border-color 0.15s ease;
+    }
+    .project-card:hover { border-color: var(--color-accent); }
+    .project-card h3 { font-size: 1.05rem; }
+    .project-card .desc {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      flex-grow: 1;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.9rem 0 1.1rem;
+    }
+    .project-tags span {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--color-text-muted);
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      padding: 0.15rem 0.65rem;
+    }
+    .project-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      align-self: flex-start;
+    }
+
+    /* ============================================================
+       9. CONTACT
+       ============================================================ */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-intro { font-size: 1.05rem; color: var(--color-text-muted); }
+    .contact-links { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+    .contact-links li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    .contact-links li:last-child { border-bottom: none; }
+    .contact-links .icon { color: var(--color-accent); font-weight: 700; width: 1.6rem; }
+
+    /* Simple form (Formspree — replace the action URL with your own) */
+    .contact-form label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.95rem;
+      padding: 0.65rem 0.8rem;
+      margin-bottom: 1.1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 1px;
+      border-color: var(--color-accent);
+    }
+
+    /* ============================================================
+       10. FOOTER
+       ============================================================ */
+    .site-footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--color-border);
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+
+    /* ============================================================
+       11. RESPONSIVE
+       ============================================================ */
+    @media (max-width: 860px) {
+      .skills-grid, .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid, .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+      .hero { padding: 5rem 0 4rem; }
+      .hero h1 { font-size: 2rem; }
+    }
+    @media (max-width: 560px) {
+      .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      .site-nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--color-border);
+        padding: 0.5rem 0;
+      }
+      .site-nav ul.open { display: flex; }
+      .site-nav ul li { padding: 0.6rem 1.5rem; }
+      .nav-toggle { display: block; }
+      .hero h1 { font-size: 1.75rem; }
+      .about-facts .value { text-align: left; }
+    }
+
+    /* Respect reduced-motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- =======================================================
-     Header / navigation
-     ======================================================= -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="#top">Satria Nugraha</a>
-
-    <button class="nav-toggle" type="button"
-            aria-expanded="false" aria-controls="site-nav">
-      Menu
-    </button>
-
-    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-      <ul>
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="#top">Satria Nugraha</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      <ul id="navMenu">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-  </div>
-</header>
+    </div>
+  </nav>
 
-<main id="main">
-
-  <!-- =====================================================
-       Hero
-       ===================================================== -->
-  <section id="top" class="hero">
-    <div class="container hero-grid">
-
-      <div>
-        <h1 class="hero-name">Satria Nugraha</h1>
-        <p class="hero-title">Software Developer &amp; IT Infrastructure Professional</p>
-        <p class="hero-lead">
-          I build and maintain the software and systems that keep teams running —
-          with a strong focus on reliability, troubleshooting, and root cause analysis.
+  <main id="main">
+    <!-- ==================== HERO ==================== -->
+    <header class="hero" id="top">
+      <div class="container">
+        <p class="kicker">Lamongan, East Java, Indonesia · Open to International Opportunities</p>
+        <h1>Satria Nugraha</h1>
+        <p class="title">Software Developer &amp; IT Infrastructure Professional</p>
+        <p class="tagline">
+          I build reliable backend systems and maintain the infrastructure they run on —
+          from Windows Server and Linux administration to cloud services and Microsoft 365.
         </p>
-
-        <div class="hero-cta">
-          <!-- Replace resume.pdf with your actual file in the repository root -->
-          <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener noreferrer">
-            View Resume
-          </a>
-          <!-- Replace with your LinkedIn profile URL -->
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/your-profile"
-             target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="assets/resume.pdf" target="_blank" rel="noopener">View Resume</a>
+          <!-- TODO: Replace with your real LinkedIn URL -->
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/your-linkedin-username" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn btn-outline" href="#contact">Contact</a>
         </div>
       </div>
+    </header>
 
-      <!-- Quick facts panel -->
-      <aside class="facts" aria-label="Quick facts">
-        <h2>At a glance</h2>
-        <dl>
-          <dt>Location</dt>
-          <dd>Lamongan, East Java, Indonesia</dd>
-
-          <dt>Primary focus</dt>
-          <dd>Software Development</dd>
-
-          <dt>Secondary focus</dt>
-          <dd>System Administration &amp; IT Infrastructure</dd>
-
-          <dt>Availability</dt>
-          <dd>Remote &amp; relocation — GCC, Japan, Malaysia, Singapore, worldwide</dd>
-        </dl>
-      </aside>
-
-    </div>
-  </section>
-
-  <!-- =====================================================
-       About
-       ===================================================== -->
-  <section id="about" class="section">
-    <div class="container">
-      <p class="eyebrow">About</p>
-      <h2 class="section-title">Professional summary</h2>
-
-      <div class="about-body">
-        <p>
-          I am a software developer and IT infrastructure professional based in Lamongan,
-          East Java, Indonesia. My background combines <strong>backend development</strong>
-          with hands-on <strong>system administration</strong>, which means I understand both
-          the application layer and the environment it runs on. I have worked as a Technical
-          Consultant, a System Administrator, and a backend developer — often as the person
-          clients and colleagues turn to when something breaks and the cause is not obvious.
-        </p>
-        <p>
-          My strongest skill is <strong>troubleshooting and root cause analysis</strong>.
-          I prefer to find out why an issue happened rather than apply a temporary fix, and
-          I document the result so it does not come back. I work carefully, communicate
-          clearly, and take ownership of the systems I am responsible for — including a
-          period as the sole IT person for a hospital environment, where reliability was
-          not optional.
-        </p>
-        <p>
-          I am open to <strong>international opportunities</strong>, including remote roles
-          and relocation to the GCC region (Kuwait, Saudi Arabia, UAE), Japan, Malaysia,
-          Singapore, and other markets. I adapt quickly to new environments, tools, and
-          working cultures.
-        </p>
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <div>
+            <p>
+              I am a software developer with a strong background in system administration and
+              IT infrastructure. Over the past several years, I have worked across the full
+              lifecycle of business systems — writing backend code, deploying and maintaining
+              servers, and supporting the people who depend on them every day.
+            </p>
+            <p>
+              My experience includes serving as a technical consultant, working as a system
+              administrator, and acting as a single-person IT department for a hospital,
+              where I was responsible for everything from Windows Server policy management
+              to troubleshooting critical production issues. I am known for being reliable,
+              methodical in root cause analysis, and quick to adapt to new environments and
+              technologies.
+            </p>
+            <p>
+              I am currently focused on software development, with system administration as a
+              complementary strength. I am open to opportunities in the GCC region (Kuwait,
+              Saudi Arabia, UAE), Japan, Malaysia, Singapore, and international remote or
+              relocation roles.
+            </p>
+          </div>
+          <aside aria-label="Quick facts">
+            <ul class="about-facts">
+              <li><span class="label">Location</span><span class="value">Lamongan, East Java, Indonesia</span></li>
+              <li><span class="label">Primary Focus</span><span class="value">Software Development</span></li>
+              <li><span class="label">Secondary Focus</span><span class="value">System Administration / IT Infrastructure</span></li>
+              <li><span class="label">Availability</span><span class="value">Open to relocate or remote</span></li>
+              <li><span class="label">Languages</span><span class="value">Indonesian, English</span></li>
+            </ul>
+          </aside>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =====================================================
-       Skills
-       ===================================================== -->
-  <section id="skills" class="section">
-    <div class="container">
-      <p class="eyebrow">Skills</p>
-      <h2 class="section-title">Technical capabilities</h2>
-      <p class="section-intro">
-        A practical, hands-on skill set covering software development and the
-        infrastructure that supports it.
-      </p>
-
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <h3>Development</h3>
-          <ul class="skill-list">
-            <li>Backend development &amp; REST APIs</li>
-            <li>Programming paradigms: OOP, procedural, MVC</li>
-            <li>Relational databases &amp; SQL</li>
-            <li>Version control with Git &amp; GitHub</li>
-            <li>Debugging, code review, refactoring</li>
-            <li>HTML, CSS, JavaScript fundamentals</li>
-          </ul>
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Development</h3>
+            <ul class="skill-list">
+              <li>Backend development (PHP / Python / Node.js)</li>
+              <li>REST API design &amp; integration</li>
+              <li>SQL databases (MySQL, PostgreSQL)</li>
+              <li>OOP &amp; general programming paradigms</li>
+              <li>Web development (HTML, CSS, JavaScript)</li>
+              <li>Version control (Git, GitHub)</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Infrastructure &amp; Systems</h3>
+            <ul class="skill-list">
+              <li>Windows Server administration (AD, GPO)</li>
+              <li>Linux server administration</li>
+              <li>Microsoft 365 administration</li>
+              <li>Networking &amp; firewall configuration</li>
+              <li>Virtualization (Hyper-V, VMware)</li>
+              <li>Backup &amp; disaster recovery</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Tools &amp; Others</h3>
+            <ul class="skill-list">
+              <li>PowerShell &amp; Bash scripting</li>
+              <li>Cloud services (AWS / Azure basics)</li>
+              <li>Troubleshooting &amp; root cause analysis</li>
+              <li>IT documentation &amp; knowledge transfer</li>
+              <li>Technical consulting &amp; client support</li>
+              <li>Agile / collaborative workflows</li>
+            </ul>
+          </div>
         </div>
-
-        <div class="skill-card">
-          <h3>Infrastructure &amp; Systems</h3>
-          <ul class="skill-list">
-            <li>Linux server administration</li>
-            <li>Windows Server administration</li>
-            <li>Microsoft 365 administration</li>
-            <li>Active Directory &amp; Group Policy</li>
-            <li>Networking fundamentals (TCP/IP, DNS, DHCP)</li>
-            <li>Cloud &amp; VPS services, object storage</li>
-            <li>Backup, recovery &amp; system hardening</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <h3>Tools &amp; Practices</h3>
-          <ul class="skill-list">
-            <li>Troubleshooting &amp; root cause analysis</li>
-            <li>PowerShell &amp; Bash scripting</li>
-            <li>Technical documentation &amp; runbooks</li>
-            <li>Incident handling &amp; escalation</li>
-            <li>End-user &amp; vendor support</li>
-            <li>IT asset &amp; change management</li>
-          </ul>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =====================================================
-       Experience  (reverse chronological)
-       ===================================================== -->
-  <section id="experience" class="section">
-    <div class="container">
-      <p class="eyebrow">Experience</p>
-      <h2 class="section-title">Professional background</h2>
-      <p class="section-intro">
-        Roles listed most recent first. Replace company names, dates, and details
-        with your own information.
-      </p>
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
 
-      <!-- Role 1 -->
-      <article class="job">
-        <div class="job-meta">
-          <h3 class="job-role">Technical Consultant</h3>
-          <p class="job-company">[Company Name] — [City, Country]</p>
-          <p class="job-period">[Month Year] – Present</p>
-        </div>
-        <ul class="job-points">
-          <li>Deliver technical consulting and hands-on implementation for client environments, covering system setup, integration, and post-deployment support.</li>
-          <li>Translate business requirements into technical specifications and work directly with client stakeholders to scope and sequence delivery.</li>
-          <li>Diagnose production issues reported by clients, perform root cause analysis, and document fixes so the client's own team can handle recurrence.</li>
-          <li>Prepare handover documentation, runbooks, and short training sessions to reduce repeat support requests.</li>
-          <li>Coordinate with development and infrastructure teams to keep deployments predictable and rollback-safe.</li>
-        </ul>
-      </article>
-
-      <!-- Role 2 -->
-      <article class="job">
-        <div class="job-meta">
-          <h3 class="job-role">IT Officer / System Administrator</h3>
-          <p class="job-company">[Hospital Name] — [City, Indonesia]</p>
-          <p class="job-period">[Month Year] – [Month Year]</p>
-        </div>
-        <ul class="job-points">
-          <li>Sole IT owner for a [XX]-user hospital environment, responsible for servers, network, end-user support, and administrative applications.</li>
-          <li>Administered Windows Server, Active Directory, and Microsoft 365 — including user lifecycle, Group Policy, and periodic access reviews.</li>
-          <li>Reduced recurring downtime by identifying the underlying causes of repeated incidents instead of applying temporary fixes.</li>
-          <li>Built and maintained scheduled backup and verification routines, and documented tested recovery procedures.</li>
-          <li>Automated routine administration tasks with PowerShell, cutting manual effort per cycle.</li>
-        </ul>
-      </article>
-
-      <!-- Role 3 -->
-      <article class="job">
-        <div class="job-meta">
-          <h3 class="job-role">Backend Developer</h3>
-          <p class="job-company">[Company Name] — [City, Indonesia]</p>
-          <p class="job-period">[Month Year] – [Month Year]</p>
-        </div>
-        <ul class="job-points">
-          <li>Developed and maintained backend services and REST APIs for internal business applications.</li>
-          <li>Designed database schemas and queries, and optimized slow queries affecting daily operations.</li>
-          <li>Worked with frontend and operations teams on releases, debugging, and production support.</li>
-          <li>Participated in code reviews and wrote technical documentation for maintained modules.</li>
-        </ul>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- =====================================================
-       Projects
-       ===================================================== -->
-  <section id="projects" class="section">
-    <div class="container">
-      <p class="eyebrow">Projects</p>
-      <h2 class="section-title">Selected work</h2>
-      <p class="section-intro">
-        A mix of software development and infrastructure/scripting work.
-        Replace the titles, descriptions, and links with your own repositories.
-      </p>
-
-      <div class="projects-grid">
-
-        <!-- Project 1 -->
-        <article class="project">
-          <h3 class="project-title">Windows Server Hardening Script</h3>
-          <p class="project-desc">
-            A PowerShell toolkit that applies a baseline security configuration to Windows
-            Server hosts: account and audit policies, SMB signing, and unnecessary service
-            reduction. Idempotent, and logs every change for audit purposes.
-          </p>
-          <ul class="tags" aria-label="Technologies used">
-            <li>PowerShell</li>
-            <li>Windows Server</li>
-            <li>Group Policy</li>
+        <!-- TODO: Adjust roles, companies, and periods as needed -->
+        <article class="job">
+          <div class="job-header">
+            <h3>IT Staff / System Administrator</h3>
+            <span class="job-period">20XX — Present</span>
+          </div>
+          <p class="job-company">[Hospital Name], Indonesia</p>
+          <ul>
+            <li>Acted as the sole IT person for a hospital, owning all infrastructure, support, and systems end to end.</li>
+            <li>Administered Windows Server environment including Active Directory, Group Policy, and user account management.</li>
+            <li>Migrated and maintained Microsoft 365 services, improving email reliability and reducing licensing waste.</li>
+            <li>Performed root cause analysis on recurring production issues, reducing repeat incidents through permanent fixes.</li>
+            <li>Managed backups, server hardening, and vendor coordination to keep critical clinical systems available.</li>
           </ul>
-          <p class="project-links">
-            <a href="https://github.com/your-username/windows-hardening"
-               target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </p>
         </article>
 
-        <!-- Project 2 -->
-        <article class="project">
-          <h3 class="project-title">IT Asset &amp; Ticketing Tool</h3>
-          <p class="project-desc">
-            A lightweight internal web application for tracking IT assets, maintenance
-            schedules, and support tickets. Built to replace spreadsheet-based tracking
-            in a single-person IT department.
-          </p>
-          <ul class="tags" aria-label="Technologies used">
-            <li>PHP</li>
-            <li>MySQL</li>
-            <li>JavaScript</li>
+        <article class="job">
+          <div class="job-header">
+            <h3>Technical Consultant</h3>
+            <span class="job-period">20XX — 20XX</span>
+          </div>
+          <p class="job-company">[Company Name], Indonesia</p>
+          <ul>
+            <li>Advised clients on infrastructure design, system integration, and software deployment.</li>
+            <li>Delivered technical implementations and documentation for enterprise and SMB customers.</li>
+            <li>Resolved complex, multi-layer issues spanning application, server, and network levels.</li>
           </ul>
-          <p class="project-links">
-            <a href="https://github.com/your-username/it-asset-tool"
-               target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </p>
         </article>
 
-        <!-- Project 3 -->
-        <article class="project">
-          <h3 class="project-title">Backup Verification Script</h3>
-          <p class="project-desc">
-            A Bash script that verifies nightly backup integrity and retention, then sends
-            a concise status report by email. Catches silent backup failures before they
-            become recovery failures.
-          </p>
-          <ul class="tags" aria-label="Technologies used">
-            <li>Bash</li>
-            <li>Linux</li>
-            <li>Cron</li>
+        <article class="job">
+          <div class="job-header">
+            <h3>Backend Developer</h3>
+            <span class="job-period">20XX — 20XX</span>
+          </div>
+          <p class="job-company">[Company Name], Indonesia</p>
+          <ul>
+            <li>Built and maintained backend services and internal business applications.</li>
+            <li>Designed database schemas and integrated third-party APIs.</li>
+            <li>Wrote reusable scripts to automate repetitive operational tasks.</li>
           </ul>
-          <p class="project-links">
-            <a href="https://github.com/your-username/backup-verify"
-               target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </p>
         </article>
-
-        <!-- Project 4 -->
-        <article class="project">
-          <h3 class="project-title">Internal Inventory REST API</h3>
-          <p class="project-desc">
-            A backend service exposing REST endpoints for inventory and stock movement
-            data, with authentication, pagination, and structured error responses.
-            Used by an internal dashboard.
-          </p>
-          <ul class="tags" aria-label="Technologies used">
-            <li>REST API</li>
-            <li>SQL</li>
-            <li>Backend</li>
-          </ul>
-          <p class="project-links">
-            <a href="https://github.com/your-username/inventory-api"
-               target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </p>
-        </article>
-
-        <!-- Project 5 -->
-        <article class="project">
-          <h3 class="project-title">Server Migration &amp; Domain Consolidation</h3>
-          <p class="project-desc">
-            Planned and executed the migration of file server and domain controller
-            roles to updated hardware, including a tested rollback plan, user
-            communication schedule, and post-migration verification checklist.
-          </p>
-          <ul class="tags" aria-label="Technologies used">
-            <li>Active Directory</li>
-            <li>Windows Server</li>
-            <li>DNS</li>
-          </ul>
-          <p class="project-links">
-            <a href="#contact">Available on request</a>
-          </p>
-        </article>
-
-        <!-- Project 6 -->
-        <article class="project">
-          <h3 class="project-title">Personal Portfolio Website</h3>
-          <p class="project-desc">
-            This site — a single-page, dependency-free landing page built with semantic
-            HTML, modern CSS, and vanilla JavaScript. Deployed on GitHub Pages.
-          </p>
-          <ul class="tags" aria-label="Technologies used">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>GitHub Pages</li>
-          </ul>
-          <p class="project-links">
-            <a href="https://github.com/your-username/your-username.github.io"
-               target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </p>
-        </article>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =====================================================
-       Contact
-       ===================================================== -->
-  <section id="contact" class="section">
-    <div class="container">
-      <p class="eyebrow">Contact</p>
-      <h2 class="section-title">Get in touch</h2>
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="projects-grid">
 
-      <div class="contact-grid">
+          <!-- TODO: Replace all placeholder projects with your real ones -->
+          <article class="project-card">
+            <h3>Internal Hospital Management Tool</h3>
+            <p class="desc">
+              A web-based internal tool built to streamline administrative workflows
+              and reporting. Designed for reliability in a single-admin environment.
+            </p>
+            <div class="project-tags">
+              <span>PHP</span><span>MySQL</span><span>JavaScript</span>
+            </div>
+            <a class="project-link" href="https://github.com/your-username/project-1" target="_blank" rel="noopener">View on GitHub →</a>
+          </article>
 
-        <div>
-          <p class="section-intro" style="margin-bottom: 0;">
-            I am currently open to full-time roles and contract engagements — remote or
-            on-site with relocation. If my background fits a position on your team, I would
-            be glad to hear from you. I reply to every serious enquiry.
-          </p>
+          <article class="project-card">
+            <h3>Windows Server Hardening Scripts</h3>
+            <p class="desc">
+              A collection of PowerShell scripts to apply baseline security policies,
+              audit configurations, and automate routine hardening tasks on Windows Server.
+            </p>
+            <div class="project-tags">
+              <span>PowerShell</span><span>Windows Server</span><span>Security</span>
+            </div>
+            <a class="project-link" href="https://github.com/your-username/project-2" target="_blank" rel="noopener">View on GitHub →</a>
+          </article>
 
-          <ul class="contact-list">
-            <li>
-              <span class="contact-label">Email</span>
-              <!-- Replace with your real email address -->
-              <a href="mailto:your.email@example.com">your.email@example.com</a>
-            </li>
-            <li>
-              <span class="contact-label">LinkedIn</span>
-              <a href="https://www.linkedin.com/in/your-profile"
-                 target="_blank" rel="noopener noreferrer">linkedin.com/in/your-profile</a>
-            </li>
-            <li>
-              <span class="contact-label">GitHub</span>
-              <a href="https://github.com/your-username"
-                 target="_blank" rel="noopener noreferrer">github.com/your-username</a>
-            </li>
-            <li>
-              <span class="contact-label">Location</span>
-              Lamongan, East Java, Indonesia (UTC+7)
-            </li>
-          </ul>
+          <article class="project-card">
+            <h3>Group Policy Deployment Toolkit</h3>
+            <p class="desc">
+              Scripts and documentation for consistent GPO deployment and rollback,
+              developed while managing a hospital's Active Directory environment.
+            </p>
+            <div class="project-tags">
+              <span>PowerShell</span><span>Active Directory</span><span>GPO</span>
+            </div>
+            <a class="project-link" href="https://github.com/your-username/project-3" target="_blank" rel="noopener">View on GitHub →</a>
+          </article>
+
+          <article class="project-card">
+            <h3>Backup &amp; Recovery Automation</h3>
+            <p class="desc">
+              Scheduled backup verification and recovery test scripts that reduced
+              manual checks and improved confidence in disaster recovery readiness.
+            </p>
+            <div class="project-tags">
+              <span>Bash</span><span>Linux</span><span>Automation</span>
+            </div>
+            <a class="project-link" href="https://github.com/your-username/project-4" target="_blank" rel="noopener">View on GitHub →</a>
+          </article>
+
+          <article class="project-card">
+            <h3>API Integration Service</h3>
+            <p class="desc">
+              A backend service that integrates third-party APIs into internal systems,
+              with error handling, logging, and retry logic.
+            </p>
+            <div class="project-tags">
+              <span>Node.js</span><span>REST API</span><span>PostgreSQL</span>
+            </div>
+            <a class="project-link" href="https://github.com/your-username/project-5" target="_blank" rel="noopener">View on GitHub →</a>
+          </article>
+
+          <article class="project-card">
+            <h3>Personal Portfolio Website</h3>
+            <p class="desc">
+              This website — a fast, accessible, single-page portfolio built with pure
+              HTML, CSS, and vanilla JavaScript, deployed on GitHub Pages.
+            </p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <a class="project-link" href="https://github.com/your-username/your-username.github.io" target="_blank" rel="noopener">View on GitHub →</a>
+          </article>
+
         </div>
+      </div>
+    </section>
 
-        <div>
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-wrapper">
+          <div>
+            <p class="contact-intro">
+              I welcome inquiries from recruiters and hiring teams in the GCC region,
+              Japan, Southeast Asia, and for international remote positions. Whether you
+              have a role in mind or simply want to connect, feel free to reach out — I
+              respond promptly.
+            </p>
+            <ul class="contact-links">
+              <!-- TODO: Replace with your real email and LinkedIn -->
+              <li><span class="icon">✉</span><a href="mailto:satria.nugraha@example.com">satria.nugraha@example.com</a></li>
+              <li><span class="icon">in</span><a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank" rel="noopener">linkedin.com/in/your-linkedin-username</a></li>
+              <li><span class="icon">⌂</span><span>Lamongan, East Java, Indonesia</span></li>
+            </ul>
+          </div>
+
           <!--
-            Contact form using Formspree (free tier).
-            1. Create a form at https://formspree.io
-            2. Replace "your-form-id" in the action URL below.
+            CONTACT FORM via Formspree (free tier).
+            1. Sign up at https://formspree.io and create a form.
+            2. Replace the action URL below with your form's endpoint,
+               e.g. https://formspree.io/f/xabcdefg
+            3. To hide this form entirely, delete the <form> block below.
           -->
-          <form id="contact-form" class="contact-form"
-                action="https://formspree.io/f/your-form-id" method="POST">
+          <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" required autocomplete="name">
 
-            <div class="field">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" autocomplete="name" required>
-            </div>
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" required autocomplete="email">
 
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email" required>
-            </div>
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
 
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-
-            <!-- Honeypot: real users never fill this in -->
-            <div class="hp-field" aria-hidden="true">
-              <label for="company-website">Leave this field empty</label>
-              <input type="text" id="company-website" name="_gotcha" tabindex="-1" autocomplete="off">
-            </div>
-
-            <div>
-              <button class="btn btn-primary" type="submit">Send message</button>
-            </div>
-
-            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+            <button class="btn btn-primary" type="submit">Send Message</button>
           </form>
         </div>
-
       </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Satria Nugraha · Built with pure HTML, CSS &amp; JavaScript · Hosted on GitHub Pages</p>
     </div>
-  </section>
+  </footer>
 
-</main>
+  <!-- ============================================================
+       Vanilla JavaScript — progressive enhancement only.
+       The page is fully functional without it.
+       ============================================================ -->
+  <script>
+    (function () {
+      "use strict";
 
-<!-- =======================================================
-     Footer
-     ======================================================= -->
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <p>&copy; <span id="year">2025</span> Satria Nugraha. All rights reserved.</p>
-    <ul class="footer-links">
-      <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-      <li><a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      <li><a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a href="mailto:your.email@example.com">Email</a></li>
-    </ul>
-  </div>
-</footer>
+      /* --- 1. Mobile navigation toggle --- */
+      var navToggle = document.getElementById("navToggle");
+      var navMenu = document.getElementById("navMenu");
 
-<script>
-/* =========================================================
-   All behaviour is progressive enhancement only.
-   The page works fully with JavaScript disabled.
-   ========================================================= */
-(function () {
-  'use strict';
-
-  /* -------------------------------------------------------
-     1. Footer — current year
-     ------------------------------------------------------- */
-  var yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = String(new Date().getFullYear());
-  }
-
-  /* -------------------------------------------------------
-     2. Mobile navigation toggle
-     ------------------------------------------------------- */
-  var navToggle = document.querySelector('.nav-toggle');
-  var siteNav = document.getElementById('site-nav');
-
-  function closeNav() {
-    if (!siteNav || !navToggle) return;
-    siteNav.classList.remove('is-open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  }
-
-  function openNav() {
-    if (!siteNav || !navToggle) return;
-    siteNav.classList.add('is-open');
-    navToggle.setAttribute('aria-expanded', 'true');
-  }
-
-  if (navToggle && siteNav) {
-    navToggle.addEventListener('click', function () {
-      var isOpen = siteNav.classList.contains('is-open');
-      isOpen ? closeNav() : openNav();
-    });
-
-    // Close after selecting a section
-    siteNav.addEventListener('click', function (event) {
-      if (event.target.tagName === 'A') closeNav();
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeNav();
-    });
-
-    // Reset state when returning to desktop width
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 760) closeNav();
-    });
-  }
-
-  /* -------------------------------------------------------
-     3. Active section highlighting in the navigation
-     ------------------------------------------------------- */
-  var navLinks = Array.prototype.slice.call(
-    document.querySelectorAll('.site-nav a[href^="#"]')
-  );
-  var sections = navLinks
-    .map(function (link) { return document.querySelector(link.getAttribute('href')); })
-    .filter(Boolean);
-
-  function setActive(id) {
-    navLinks.forEach(function (link) {
-      var isCurrent = link.getAttribute('href') === '#' + id;
-      link.classList.toggle('is-active', isCurrent);
-      if (isCurrent) {
-        link.setAttribute('aria-current', 'true');
-      } else {
-        link.removeAttribute('aria-current');
-      }
-    });
-  }
-
-  if (sections.length && 'IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) setActive(entry.target.id);
+      navToggle.addEventListener("click", function () {
+        var isOpen = navMenu.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
       });
-    }, {
-      rootMargin: '-80px 0px -65% 0px',
-      threshold: 0
-    });
 
-    sections.forEach(function (section) { observer.observe(section); });
-  }
+      // Close the mobile menu after clicking a link
+      navMenu.addEventListener("click", function (e) {
+        if (e.target.tagName === "A") {
+          navMenu.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+        }
+      });
 
-  /* -------------------------------------------------------
-     4. Contact form (Formspree-compatible)
-     ------------------------------------------------------- */
-  var form = document.getElementById('contact-form');
-  var status = document.getElementById('form-status');
+      /* --- 2. Active nav link highlight on scroll (scroll-spy) --- */
+      var sections = document.querySelectorAll("main section[id]");
+      var navLinks = document.querySelectorAll(".site-nav ul a");
 
-  function setStatus(message, state) {
-    if (!status) return;
-    status.textContent = message;
-    if (state) {
-      status.setAttribute('data-state', state);
-    } else {
-      status.removeAttribute('data-state');
-    }
-  }
+      function updateActiveLink() {
+        var scrollPos = window.scrollY + 120; // offset for sticky nav
+        var currentId = "";
 
-  if (form && status) {
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      var action = form.getAttribute('action') || '';
-
-      // Guard: the form has not been connected to a real endpoint yet.
-      if (action.indexOf('your-form-id') !== -1) {
-        setStatus(
-          'The contact form is not connected yet. Please email me directly at your.email@example.com.',
-          'error'
-        );
-        return;
-      }
-
-      var submitButton = form.querySelector('button[type="submit"]');
-      var originalLabel = submitButton ? submitButton.textContent : '';
-
-      if (submitButton) {
-        submitButton.disabled = true;
-        submitButton.textContent = 'Sending…';
-      }
-      setStatus('', null);
-
-      fetch(action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      })
-        .then(function (response) {
-          if (!response.ok) throw new Error('Request failed');
-          form.reset();
-          setStatus('Thank you — your message has been sent. I will reply as soon as possible.', 'success');
-        })
-        .catch(function () {
-          setStatus('Sorry, something went wrong. Please email me directly instead.', 'error');
-        })
-        .then(function () {
-          if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.textContent = originalLabel;
+        sections.forEach(function (sec) {
+          if (sec.offsetTop <= scrollPos) {
+            currentId = sec.id;
           }
         });
-    });
-  }
-})();
-</script>
+
+        navLinks.forEach(function (link) {
+          var isMatch = link.getAttribute("href") === "#" + currentId;
+          link.classList.toggle("active", isMatch);
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveLink, { passive: true });
+      updateActiveLink();
+
+      /* --- 3. Dynamic footer year --- */
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
