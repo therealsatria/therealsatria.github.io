@@ -1,0 +1,62 @@
+---
+const skillGroups = [
+  {
+    title: 'Development',
+    items: [
+      'Backend development & REST APIs',
+      'Programming paradigms: OOP, procedural, MVC',
+      'Relational databases & SQL',
+      'Version control with Git & GitHub',
+      'Debugging, code review, refactoring',
+      'HTML, CSS, JavaScript fundamentals',
+    ],
+  },
+  {
+    title: 'Infrastructure & Systems',
+    items: [
+      'Linux server administration',
+      'Windows Server administration',
+      'Microsoft 365 administration',
+      'Active Directory & Group Policy',
+      'Networking fundamentals (TCP/IP, DNS, DHCP)',
+      'Cloud & VPS services, object storage',
+      'Backup, recovery & system hardening',
+    ],
+  },
+  {
+    title: 'Tools & Practices',
+    items: [
+      'Troubleshooting & root cause analysis',
+      'PowerShell & Bash scripting',
+      'Technical documentation & runbooks',
+      'Incident handling & escalation',
+      'End-user & vendor support',
+      'IT asset & change management',
+    ],
+  },
+];
+---
+
+<section id="skills" class="section">
+  <div class="container">
+    <p class="eyebrow">Skills</p>
+    <h2 class="section-title">Technical capabilities</h2>
+    <p class="section-intro">
+      A practical, hands-on skill set covering software development and the
+      infrastructure that supports it.
+    </p>
+
+    <div class="skills-grid">
+      {skillGroups.map((group) => (
+        <div class="skill-card">
+          <h3>{group.title}</h3>
+          <ul class="skill-list">
+            {group.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

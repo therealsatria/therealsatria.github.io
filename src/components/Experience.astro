@@ -1,0 +1,78 @@
+---
+const experiences = [
+  {
+    role: 'Sales Executive',
+    company: 'PT Dwijaya Adiwahana (ISUZU Jombang) — Jombang, Indonesia',
+    period: 'Mar 2026 – Present',
+    points: [
+      'Engaged with commercial clients to understand operational requirements.',
+      'Coordinated internal teams to support delivery and after-sales processes.',
+    ],
+  },
+  {
+    role: 'Technical Consultant',
+    company: 'Solutionlabs Group — Yogyakarta, Indonesia',
+    period: 'Aug 2024 – Nov 2025',
+    points: [
+      'Managed Microsoft 365 environments and supported server infrastructure to maintain system availability.',
+      'Handled escalated technical issues, performed root cause analysis, and implemented permanent solutions.',
+      'Conducted preventive maintenance and prepared technical reports for decision-making.',
+      'Collaborated with teams to improve cloud infrastructure and operational processes.',
+    ],
+  },
+  {
+    role: 'Backend Developer (Project-based)',
+    company: 'Solutionlabs Group — Yogyakarta, Indonesia',
+    period: 'Nov 2024 – Jan 2025',
+    points: [
+      'Developed and maintained RESTful APIs using .NET Core as part of a separate project engagement.',
+      'Supported integration work and troubleshooting alongside primary Technical Consultant responsibilities.',
+    ],
+  },
+  {
+    role: 'Technical Consultant',
+    company: 'PT Mitra Integrasi Informatika (Metrodata Group) — Jakarta, Indonesia',
+    period: 'Jun 2023 – Jun 2024',
+    points: [
+      'Conducted system assessments and gap analyses for enterprise clients.',
+      'Provided technical support and troubleshooting during implementation phases.',
+      'Delivered knowledge transfer sessions and created technical documentation.',
+      'Supported Microsoft-related solutions and infrastructure components.',
+    ],
+  },
+  {
+    role: 'IT System Administrator',
+    company: 'Mutiara Hati Hospital — Mojokerto, Indonesia',
+    period: 'Jan 2020 – Jun 2023',
+    points: [
+      'Managed end-to-end IT operations as the sole technical person (network, servers, Linux, and user support).',
+      'Administered servers (Web, SQL, File Servers) and Linux environments to support 24/7 hospital operations.',
+      'Developed and maintained internal web and desktop applications to support hospital processes.',
+      'Handled hardware, software, PABX, and CCTV systems across the facility.',
+    ],
+  },
+];
+---
+
+<section id="experience" class="section">
+  <div class="container">
+    <p class="eyebrow">Experience</p>
+    <h2 class="section-title">Professional background</h2>
+    <p class="section-intro">Roles listed most recent first.</p>
+
+    {experiences.map((exp) => (
+      <article class="job">
+        <div class="job-meta">
+          <h3 class="job-role">{exp.role}</h3>
+          <p class="job-company">{exp.company}</p>
+          <p class="job-period">{exp.period}</p>
+        </div>
+        <ul class="job-points">
+          {exp.points.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </div>
+</section>

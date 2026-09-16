@@ -1,41 +1,46 @@
-### Hi there! 👋 I'm Satria Nugraha
+# Astro Starter Kit: Basics
 
-### 💻 Software Developer & IT Professional
+```sh
+npm create astro@latest -- --template basics
+```
 
-I enjoy building practical solutions and understanding how systems work — both from the application side and the infrastructure side.  
-I have a solid foundation in programming paradigms and continue to explore modern development practices, including how AI tools can support the software development process.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-### 🛠️ Tech Stack & Interests
+## 🚀 Project Structure
 
-**Programming & Development**
-- General understanding of programming paradigms (OOP, functional, procedural)
-- Backend development experience (previously worked with .NET / C#)
-- Familiar with TypeScript and modern web development concepts
-- RESTful API design and integration
+Inside of your Astro project, you'll see the following folders and files:
 
-**AI-Assisted Development**
-- Actively using AI tools to support coding, debugging, and learning (Grok, Kimi, DeepSeek, Google AI Studio, etc.)
-- Exploring how AI can improve productivity in software development workflows
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
 
-**Infrastructure & Systems**
-- System Administration
-- Cloud Services
-- Microsoft 365
-- Linux
-- Troubleshooting & Root Cause Analysis
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-### 🌟 What I Focus On
+## 🧞 Commands
 
-- Writing clean and maintainable code
-- Understanding systems from both application and infrastructure perspectives
-- Continuous learning, especially around AI tools for developers
-- Solving real technical problems through structured analysis
+All commands are run from the root of the project, from a terminal:
 
-### 🤝 Open Source & Learning
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-Most of my repositories are open for learning and experimentation.  
-Feel free to explore, fork, or reach out if you'd like to discuss ideas.
+## 👀 Want to learn more?
 
----
-
-📫 Reach me on [LinkedIn](https://www.linkedin.com/in/satrianug)
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

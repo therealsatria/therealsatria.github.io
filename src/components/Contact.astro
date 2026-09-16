@@ -1,0 +1,60 @@
+---
+const contacts = [
+  {
+    label: 'Email',
+    value: 'satrianug@live.com',
+    href: 'mailto:satrianug@live.com',
+  },
+  {
+    label: 'WhatsApp',
+    value: '+62 813-3287-5050',
+    href: 'https://wa.me/6281332875050',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/satrianug',
+    href: 'https://www.linkedin.com/in/satrianug',
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/therealsatria',
+    href: 'https://github.com/therealsatria',
+  },
+];
+---
+
+<section id="contact" class="section">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-title">Get in touch</h2>
+
+    <div class="contact-grid">
+      <div>
+        <p class="section-intro" style="margin-bottom: 0;">
+          I am currently open to full-time roles and contract engagements —
+          remote or on-site with relocation. If my background fits a position on
+          your team, I would be glad to hear from you.
+        </p>
+      </div>
+
+      <div>
+        <ul class="contact-list">
+          {contacts.map((item) => (
+            <li>
+              <span class="contact-label">{item.label}</span>
+              <a
+                href={item.href}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http')
+                  ? 'noopener noreferrer'
+                  : undefined}
+              >
+                {item.value}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

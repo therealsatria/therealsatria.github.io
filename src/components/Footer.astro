@@ -1,0 +1,40 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p>© {year} Satria Nugraha. All rights reserved.</p>
+      <p class="visitor-info" id="visitor-info"></p>
+    </div>
+    <ul class="footer-links">
+      <li>
+        <a
+          href="https://github.com/therealsatria"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/satrianug"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  const el = document.getElementById('visitor-info');
+  if (el) {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    el.textContent = `Your timezone: ${tz}`;
+  }
+</script>

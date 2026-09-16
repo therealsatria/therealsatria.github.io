@@ -2,22 +2,20 @@
    1. Design tokens
    ========================================================= */
 :root {
-  --bg:            #ffffff;
-  --bg-soft:       #f7f8fa;
-  --text:          #141b24;
-  --muted:         #5a6675;
-  --border:        #e3e7ec;
+  --bg: #ffffff;
+  --bg-soft: #f7f8fa;
+  --text: #141b24;
+  --muted: #5a6675;
+  --border: #e3e7ec;
   --border-strong: #d2d8df;
-  --accent:        #14577f;
-  --accent-dark:   #0f4463;
-  --accent-soft:   #eef4f8;
-
+  --accent: #14577f;
+  --accent-dark: #0f4463;
+  --accent-soft: #eef4f8;
   --radius: 6px;
   --container: 1100px;
   --header-h: 64px;
-
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 }
 
 /* =========================================================
@@ -58,16 +56,10 @@ p:last-child { margin-bottom: 0; }
 
 ul { margin: 0; padding: 0; }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
+a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 2px;
@@ -167,14 +159,8 @@ textarea:focus-visible {
   border-bottom: 2px solid transparent;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
-.site-nav a:hover {
-  color: var(--text);
-  text-decoration: none;
-}
-.site-nav a.is-active {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.site-nav a.is-active { color: var(--accent); border-bottom-color: var(--accent); }
 
 .nav-toggle {
   display: none;
@@ -235,12 +221,14 @@ textarea:focus-visible {
   gap: 12px;
 }
 
+/* --- At a Glance panel --- */
 .facts {
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 24px 24px 8px;
 }
+
 .facts h2 {
   font-size: 0.75rem;
   font-weight: 600;
@@ -249,7 +237,9 @@ textarea:focus-visible {
   color: var(--muted);
   margin-bottom: 16px;
 }
+
 .facts dl { margin: 0; }
+
 .facts dt {
   font-size: 0.75rem;
   font-weight: 600;
@@ -258,6 +248,7 @@ textarea:focus-visible {
   color: var(--muted);
   margin-bottom: 2px;
 }
+
 .facts dd {
   margin: 0 0 16px;
   font-size: 0.925rem;
@@ -290,10 +281,13 @@ textarea:focus-visible {
   background: var(--accent);
   color: #fff;
 }
-.btn-primary:hover { background: var(--accent-dark); color: #fff; }
+.btn-primary:hover {
+  background: var(--accent-dark);
+  color: #fff;
+}
 
 .btn-outline {
-  background: #fff;
+  background: transparent;
   color: var(--text);
   border-color: var(--border-strong);
 }
@@ -341,12 +335,14 @@ textarea:focus-visible {
   font-size: 0.9rem;
   color: var(--muted);
 }
+
 .skill-list li {
   position: relative;
   padding-left: 16px;
   margin-bottom: 8px;
 }
 .skill-list li:last-child { margin-bottom: 0; }
+
 .skill-list li::before {
   content: "";
   position: absolute;
@@ -370,15 +366,14 @@ textarea:focus-visible {
 }
 .job:first-of-type { border-top: 1px solid var(--border-strong); }
 
-.job-role {
-  font-size: 1.025rem;
-  margin-bottom: 4px;
-}
+.job-role { font-size: 1.025rem; margin-bottom: 4px; }
+
 .job-company {
   font-size: 0.9rem;
   color: var(--muted);
   margin: 0 0 6px;
 }
+
 .job-period {
   font-size: 0.8rem;
   font-weight: 500;
@@ -399,6 +394,7 @@ textarea:focus-visible {
   margin-bottom: 9px;
 }
 .job-points li:last-child { margin-bottom: 0; }
+
 .job-points li::before {
   content: "";
   position: absolute;
@@ -429,16 +425,9 @@ textarea:focus-visible {
 }
 .project:hover { border-color: var(--border-strong); }
 
-.project-title {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
+.project-title { font-size: 1rem; margin-bottom: 10px; }
 
-.project-desc {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-bottom: 18px;
-}
+.project-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 18px; }
 
 .tags {
   display: flex;
@@ -498,46 +487,6 @@ textarea:focus-visible {
   margin-bottom: 3px;
 }
 
-.contact-form { display: grid; gap: 16px; }
-
-.field { display: grid; gap: 6px; }
-.field label {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text);
-}
-.field input,
-.field textarea {
-  width: 100%;
-  font-family: inherit;
-  font-size: 0.925rem;
-  color: var(--text);
-  background: #fff;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius);
-  padding: 10px 12px;
-  transition: border-color 0.15s ease;
-}
-.field input:hover,
-.field textarea:hover { border-color: #b9c2cc; }
-.field textarea { resize: vertical; min-height: 120px; }
-
-.form-status {
-  font-size: 0.875rem;
-  margin: 0;
-  min-height: 1.2em;
-}
-.form-status[data-state="success"] { color: #1d6b4a; }
-.form-status[data-state="error"]   { color: #a3341f; }
-
-.hp-field {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
 /* =========================================================
    12. Footer
    ========================================================= */
@@ -546,6 +495,7 @@ textarea:focus-visible {
   background: var(--bg-soft);
   border-top: 1px solid var(--border);
 }
+
 .footer-inner {
   display: flex;
   flex-wrap: wrap;
@@ -555,11 +505,13 @@ textarea:focus-visible {
   font-size: 0.85rem;
   color: var(--muted);
 }
+
 .visitor-info {
   margin-top: 6px;
   font-size: 0.75rem;
   color: var(--muted);
 }
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;
@@ -579,9 +531,7 @@ textarea:focus-visible {
 @media (max-width: 760px) {
   .section { padding: 64px 0; }
   .hero { padding: 64px 0 60px; }
-
   .nav-toggle { display: inline-flex; }
-
   .site-nav {
     position: absolute;
     top: 100%;
@@ -593,45 +543,6 @@ textarea:focus-visible {
     padding: 8px 0 12px;
   }
   .site-nav.is-open { display: block; }
-
-  .site-nav ul {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 0 24px;
-  }
-  .site-nav a {
-    display: block;
-    padding: 13px 0;
-    border-bottom: 1px solid var(--border);
-    border-left: 0;
-  }
-  .site-nav li:last-child a { border-bottom: 0; }
-  .site-nav a.is-active { border-bottom-color: var(--border); color: var(--accent); }
-}
-
-@media (max-width: 480px) {
-  .hero-cta .btn { width: 100%; }
-  .footer-inner { flex-direction: column; align-items: flex-start; }
-}
-
-/* =========================================================
-   14. Reduced motion & print
-   ========================================================= */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { transition: none !important; }
-}
-
-@media print {
-  .site-header,
-  .hero-cta,
-  .contact-form,
-  .skip-link { display: none !important; }
-
-  body { color: #000; background: #fff; font-size: 12pt; }
-  .section { padding: 16px 0; border: 0; }
-  .hero { padding: 0 0 16px; background: none; border-bottom: 1px solid #ccc; }
-  .project, .skill-card, .facts { border-color: #ccc; page-break-inside: avoid; }
-  a { color: #000; text-decoration: none; }
+  .site-nav ul { flex-direction: column; gap: 0; padding: 0 24px; }
+  .site-nav a { display: block; padding: 10px 0; border-bottom: 0; }
 }

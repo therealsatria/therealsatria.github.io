@@ -1,0 +1,51 @@
+---
+const projects = [
+  {
+    title: 'Windows Server Hardening Script',
+    description:
+      'A PowerShell toolkit that applies a baseline security configuration to Windows Server hosts: account and audit policies, SMB signing, and unnecessary service reduction. Idempotent, and logs every change for audit purposes.',
+    tags: ['PowerShell', 'Windows Server', 'Group Policy'],
+    link: 'https://github.com/therealsatria',
+  },
+  {
+    title: 'Personal Portfolio Website',
+    description:
+      'This site — a single-page, dependency-free landing page built with semantic HTML, modern CSS, and vanilla JavaScript. Deployed on GitHub Pages.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
+    link: 'https://github.com/therealsatria/therealsatria.github.io',
+  },
+];
+---
+
+<section id="projects" class="section">
+  <div class="container">
+    <p class="eyebrow">Projects</p>
+    <h2 class="section-title">Selected work</h2>
+    <p class="section-intro">
+      A mix of software development and infrastructure/scripting work.
+    </p>
+
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <article class="project">
+          <h3 class="project-title">{project.title}</h3>
+          <p class="project-desc">{project.description}</p>
+          <ul class="tags" aria-label="Technologies used">
+            {project.tags.map((tag) => (
+              <li>{tag}</li>
+            ))}
+          </ul>
+          <p class="project-links">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub
+            </a>
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

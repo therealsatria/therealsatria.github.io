@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Satria Nugraha — Software Developer & IT Infrastructure Professional"
+  description="Satria Nugraha — Software Developer and IT Infrastructure Professional based in Indonesia. Backend development, system administration, troubleshooting and root cause analysis. Open to remote and relocation opportunities."
+>
+  <Header />
+  <main id="main">
+    <Hero />
+    <About />
+    <Skills />
+    <Experience />
+    <Projects />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>
