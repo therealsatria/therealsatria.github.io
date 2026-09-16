@@ -1,37 +1,36 @@
 ---
 const skillGroups = [
   {
-    title: 'Development',
+    title: 'Infrastructure & Microsoft',
     items: [
-      'Backend development & REST APIs',
-      'Programming paradigms: OOP, procedural, MVC',
-      'Relational databases & SQL',
-      'Version control with Git & GitHub',
-      'Debugging, code review, refactoring',
-      'HTML, CSS, JavaScript fundamentals',
+      'Windows Server Administration',
+      'Microsoft 365 Administration',
+      'Entra ID / Active Directory',
+      'Intune & Endpoint Management',
+      'Group Policy & Basic Hardening',
+      'PowerShell Scripting',
     ],
   },
   {
-    title: 'Infrastructure & Systems',
+    title: 'Systems & Operations',
     items: [
-      'Linux server administration',
-      'Windows Server administration',
-      'Microsoft 365 administration',
-      'Active Directory & Group Policy',
-      'Networking fundamentals (TCP/IP, DNS, DHCP)',
-      'Cloud & VPS services, object storage',
-      'Backup, recovery & system hardening',
+      'Linux Administration',
+      'Troubleshooting & Root Cause Analysis',
+      'Server & Network Support',
+      'Incident Handling & Escalation',
+      'Technical Documentation',
+      'End-user Support',
     ],
   },
   {
-    title: 'Tools & Practices',
+    title: 'Development & Tools',
     items: [
-      'Troubleshooting & root cause analysis',
-      'PowerShell & Bash scripting',
-      'Technical documentation & runbooks',
-      'Incident handling & escalation',
-      'End-user & vendor support',
-      'IT asset & change management',
+      'Backend Development (REST API)',
+      'Programming Paradigms (OOP, Procedural)',
+      'Git & Version Control',
+      'HTML, CSS, JavaScript',
+      'Docker (Basic)',
+      'Virtualization (VMware / Hyper-V / Proxmox)',
     ],
   },
 ];
@@ -40,16 +39,13 @@ const skillGroups = [
 <section id="skills" class="section">
   <div class="container">
     <p class="eyebrow">Skills</p>
-    <h2 class="section-title">Software &amp; Infrastructure Skills</h2>
+    <h2 class="section-title">Core Technical Skills</h2>
     <p class="section-intro">
-      A practical skill set covering <strong>software development</strong> and
-      the <strong>IT infrastructure</strong> that supports it.
+      Focused on <strong>system administration</strong>, <strong>Microsoft infrastructure</strong>, 
+      and practical troubleshooting — with supporting development capabilities.
     </p>
 
-    <div
-      class="skills-grid"
-      aria-label="Software development and IT infrastructure skills"
-    >
+    <div class="skills-grid" aria-label="Core technical skills">
       {skillGroups.map((group) => (
         <div class="skill-card">
           <h3>{group.title}</h3>
