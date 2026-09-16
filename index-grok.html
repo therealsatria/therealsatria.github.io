@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Satria Nugraha — Software Developer & IT Infrastructure Professional based in Indonesia. Open to international opportunities." />
+  <meta name="author" content="Satria Nugraha" />
+  <title>Satria Nugraha | Software Developer & IT Infrastructure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== CSS Variables ===== */
+    :root {
+      --color-bg: #fafafa;
+      --color-surface: #ffffff;
+      --color-text: #1a1a1a;
+      --color-text-secondary: #4a4a4a;
+      --color-text-muted: #6b6b6b;
+      --color-border: #e5e5e5;
+      --color-accent: #1e3a5f;
+      --color-accent-hover: #152a45;
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --max-width: 720px;
+      --section-padding: 5rem 1.5rem;
+      --radius: 6px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--color-accent-hover);
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ===== Layout ===== */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: var(--section-padding);
+    }
+
+    section + section {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.75rem;
+      color: var(--color-text);
+    }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 250, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.875rem 1.5rem;
+    }
+
+    .nav-logo {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .nav-logo:hover {
+      text-decoration: none;
+      color: var(--color-accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--color-text);
+      margin: 4px 0;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      padding: 6rem 1.5rem 5rem;
+      text-align: left;
+    }
+
+    .hero-name {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      color: var(--color-text);
+    }
+
+    .hero-title {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      max-width: 36rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--color-accent);
+      color: #ffffff;
+      border-color: var(--color-accent);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-accent-hover);
+      border-color: var(--color-accent-hover);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background-color: var(--color-surface);
+      color: var(--color-text);
+      border-color: var(--color-border);
+    }
+
+    .btn-secondary:hover {
+      background-color: #f0f0f0;
+      border-color: #d0d0d0;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    /* ===== About ===== */
+    .about-content p {
+      margin-bottom: 1rem;
+      color: var(--color-text-secondary);
+      font-size: 1rem;
+    }
+
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== Skills ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 560px) {
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .skill-group h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--color-text);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      font-size: 0.8125rem;
+      padding: 0.3rem 0.7rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      color: var(--color-text-secondary);
+    }
+
+    /* ===== Experience ===== */
+    .exp-item {
+      margin-bottom: 2.25rem;
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-header {
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-role {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .exp-company {
+      font-size: 0.9375rem;
+      color: var(--color-text-secondary);
+    }
+
+    .exp-period {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      margin-top: 0.15rem;
+    }
+
+    .exp-bullets {
+      margin-top: 0.75rem;
+      padding-left: 1.1rem;
+    }
+
+    .exp-bullets li {
+      position: relative;
+      font-size: 0.9375rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.4rem;
+      line-height: 1.55;
+    }
+
+    .exp-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: -1.1rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ===== Projects ===== */
+    .projects-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.35rem;
+      transition: border-color 0.15s ease;
+    }
+
+    .project-card:hover {
+      border-color: #c8c8c8;
+    }
+
+    .project-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--color-text);
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.75rem;
+      line-height: 1.55;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 1rem;
+      font-size: 0.8125rem;
+    }
+
+    .project-tech {
+      color: var(--color-text-muted);
+    }
+
+    .project-link {
+      font-weight: 500;
+    }
+
+    /* ===== Contact ===== */
+    .contact-intro {
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-label {
+      font-weight: 500;
+      color: var(--color-text);
+      min-width: 5rem;
+    }
+
+    .contact-value a {
+      color: var(--color-accent);
+    }
+
+    .contact-closing {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      border-top: 1px solid var(--color-border);
+      padding-top: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 4rem 1.5rem 3.5rem;
+      }
+
+      .hero-name {
+        font-size: 1.75rem;
+      }
+
+      .hero-title {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 3.5rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    /* ===== Accessibility ===== */
+    :focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo">Satria Nugraha</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="container">
+        <h1 class="hero-name">Satria Nugraha</h1>
+        <p class="hero-title">Software Developer &amp; IT Infrastructure Professional</p>
+        <p class="hero-subtitle">
+          Building reliable software and managing robust systems. Based in Lamongan, East Java, Indonesia. Open to international opportunities.
+        </p>
+        <div class="hero-actions">
+          <a href="resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">View Resume</a>
+          <a href="https://www.linkedin.com/in/your-profile" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#contact" class="btn btn-secondary">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 class="section-title" id="about-title">About</h2>
+        <div class="about-content">
+          <p>
+            I am a software developer with a strong background in system administration and IT infrastructure. My work has spanned technical consulting, backend development, and hands-on infrastructure management, giving me a practical understanding of how software and systems interact in real environments.
+          </p>
+          <p>
+            I place particular value on troubleshooting and root cause analysis. Whether diagnosing application issues or resolving infrastructure problems, I focus on clear ownership, reliable outcomes, and solutions that hold up under operational pressure. I am comfortable working independently and taking full responsibility for systems and services.
+          </p>
+          <p>
+            I am open to international opportunities, including roles in the GCC region (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, as well as remote or relocation-based positions. I am prepared to contribute in environments that prioritize professionalism, reliability, and long-term technical quality.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 class="section-title" id="skills-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Development</h3>
+            <div class="skill-list">
+              <span class="skill-tag">Backend Development</span>
+              <span class="skill-tag">API Design</span>
+              <span class="skill-tag">Scripting</span>
+              <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag">Version Control (Git)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Infrastructure &amp; Systems</h3>
+            <div class="skill-list">
+              <span class="skill-tag">Linux Administration</span>
+              <span class="skill-tag">Windows Server</span>
+              <span class="skill-tag">Server Administration</span>
+              <span class="skill-tag">Microsoft 365</span>
+              <span class="skill-tag">Cloud Services</span>
+              <span class="skill-tag">Network Fundamentals</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Core Strengths</h3>
+            <div class="skill-list">
+              <span class="skill-tag">Troubleshooting</span>
+              <span class="skill-tag">Root Cause Analysis</span>
+              <span class="skill-tag">System Reliability</span>
+              <span class="skill-tag">Technical Documentation</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Tools &amp; Others</h3>
+            <div class="skill-list">
+              <span class="skill-tag">PowerShell</span>
+              <span class="skill-tag">Bash</span>
+              <span class="skill-tag">Monitoring &amp; Logging</span>
+              <span class="skill-tag">Security Hardening</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <h2 class="section-title" id="experience-title">Experience</h2>
+
+        <!-- Role 1 - Placeholder: replace with your actual data -->
+        <article class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Technical Consultant / System Administrator</div>
+            <div class="exp-company">[Company Name] — [Location]</div>
+            <div class="exp-period">[Month Year] – Present</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Managed end-to-end IT infrastructure and systems for the organization, including servers, networking, and user support.</li>
+            <li>Led troubleshooting and root cause analysis for critical incidents, reducing recurring issues through structured diagnostics.</li>
+            <li>Implemented and maintained Microsoft 365 services, identity management, and security policies.</li>
+            <li>Developed internal scripts and tools to automate routine administration tasks and improve operational reliability.</li>
+          </ul>
+        </article>
+
+        <!-- Role 2 - Placeholder -->
+        <article class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">System Administrator</div>
+            <div class="exp-company">[Hospital / Organization Name] — [Location]</div>
+            <div class="exp-period">[Month Year] – [Month Year]</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Served as the primary (single-person) IT resource, owning infrastructure availability, security, and day-to-day operations.</li>
+            <li>Performed root cause analysis on system and application issues, delivering stable resolutions under operational constraints.</li>
+            <li>Maintained Windows Server environments, applied hardening practices, and ensured continuity of critical hospital systems.</li>
+            <li>Supported clinical and administrative users with reliable technical assistance and clear documentation.</li>
+          </ul>
+        </article>
+
+        <!-- Role 3 - Placeholder -->
+        <article class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Backend Developer / Technical Role</div>
+            <div class="exp-company">[Company Name] — [Location]</div>
+            <div class="exp-period">[Month Year] – [Month Year]</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Contributed to backend development and system integration, focusing on reliability and maintainable code.</li>
+            <li>Collaborated with stakeholders to diagnose and resolve production issues through systematic analysis.</li>
+            <li>Supported deployment and operational processes alongside development work.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 class="section-title" id="projects-title">Selected Projects</h2>
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="project-card">
+            <h3 class="project-title">Windows Server Policy &amp; Hardening Scripts</h3>
+            <p class="project-desc">
+              Collection of PowerShell scripts for applying security baselines, auditing configurations, and enforcing consistent policies across Windows Server environments.
+            </p>
+            <div class="project-meta">
+              <span class="project-tech">PowerShell · Windows Server · Security</span>
+              <a href="https://github.com/yourusername/project-repo" class="project-link" target="_blank" rel="noopener">View on GitHub →</a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <h3 class="project-title">Internal Administration Toolkit</h3>
+            <p class="project-desc">
+              Set of automation scripts and small utilities to streamline user provisioning, reporting, and routine system checks in a mixed Windows/Linux environment.
+            </p>
+            <div class="project-meta">
+              <span class="project-tech">PowerShell · Bash · Automation</span>
+              <a href="https://github.com/yourusername/project-repo" class="project-link" target="_blank" rel="noopener">View on GitHub →</a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <h3 class="project-title">[Web Application / Tool Name]</h3>
+            <p class="project-desc">
+              Brief description of a backend or full-stack project you built. Focus on the problem it solved and the reliability or maintainability aspects.
+            </p>
+            <div class="project-meta">
+              <span class="project-tech">[Language/Framework] · [Database] · [Other]</span>
+              <a href="https://github.com/yourusername/project-repo" class="project-link" target="_blank" rel="noopener">View on GitHub →</a>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card">
+            <h3 class="project-title">[Scripting / Infrastructure Project]</h3>
+            <p class="project-desc">
+              Placeholder for another IT or scripting project — for example monitoring helpers, backup automation, or configuration management tools.
+            </p>
+            <div class="project-meta">
+              <span class="project-tech">Bash · Linux · Monitoring</span>
+              <a href="https://github.com/yourusername/project-repo" class="project-link" target="_blank" rel="noopener">View on GitHub →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section-title" id="contact-title">Contact</h2>
+        <p class="contact-intro">
+          I welcome conversations with recruiters and hiring managers regarding software development and IT infrastructure roles, including opportunities in the GCC region, Japan, and remote or relocation-based positions.
+        </p>
+        <div class="contact-links">
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <span class="contact-value"><a href="mailto:your.email@example.com">your.email@example.com</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value"><a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">linkedin.com/in/your-profile</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value"><a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a></span>
+          </div>
+        </div>
+        <p class="contact-closing">
+          Please feel free to reach out via email or LinkedIn. I respond promptly to professional inquiries and am happy to share additional details about my experience or availability.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Satria Nugraha. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    // Close mobile menu when a link is clicked
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Dynamic year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
