@@ -667,6 +667,10 @@ select:focus-visible {
   color: var(--muted);
 }
 
+.visitor-info p {
+  margin: 0;
+}
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;

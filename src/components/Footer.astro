@@ -6,7 +6,12 @@ const year = new Date().getFullYear();
   <div class="container footer-inner">
     <div>
       <p>© {year} Satria Nugraha. All rights reserved.</p>
-      <p class="visitor-info" id="visitor-info"></p>
+      <div class="visitor-info" aria-label="Visitor information">
+        <p id="visitor-timezone">Your timezone: Loading...</p>
+        <p id="visitor-ip">IP address: Loading...</p>
+        <p id="visitor-region">Region: Loading...</p>
+        <p id="visitor-browser">Browser: Loading...</p>
+      </div>
     </div>
     <ul class="footer-links">
       <li>
@@ -32,9 +37,45 @@ const year = new Date().getFullYear();
 </footer>
 
 <script>
-  const el = document.getElementById('visitor-info');
-  if (el) {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    el.textContent = `Your timezone: ${tz}`;
+  const timezoneElement = document.getElementById('visitor-timezone');
+  const ipElement = document.getElementById('visitor-ip');
+  const regionElement = document.getElementById('visitor-region');
+  const browserElement = document.getElementById('visitor-browser');
+
+  if (timezoneElement) {
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    timezoneElement.textContent = `Your timezone: ${timezone || 'Unavailable'}`;
   }
+
+  if (browserElement) {
+    const userAgent = navigator.userAgent;
+    const browser = userAgent.includes('Edg/')
+      ? 'Microsoft Edge'
+      : userAgent.includes('Chrome/')
+        ? 'Google Chrome'
+        : userAgent.includes('Firefox/')
+          ? 'Mozilla Firefox'
+          : userAgent.includes('Safari/') && !userAgent.includes('Chrome/')
+            ? 'Safari'
+            : 'Unknown browser';
+    browserElement.textContent = `Browser: ${browser}`;
+  }
+
+  fetch('https://ipwho.is/')
+    .then((response) => {
+      if (!response.ok) throw new Error('Unable to load visitor location');
+      return response.json();
+    })
+    .then((data) => {
+      if (ipElement) {
+        ipElement.textContent = `IP address: ${data.ip || 'Unavailable'}`;
+      }
+      if (regionElement) {
+        regionElement.textContent = `Region: ${data.region || data.country_name || 'Unavailable'}`;
+      }
+    })
+    .catch(() => {
+      if (ipElement) ipElement.textContent = 'IP address: Unavailable';
+      if (regionElement) regionElement.textContent = 'Region: Unavailable';
+    });
 </script>
