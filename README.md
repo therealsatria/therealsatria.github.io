@@ -1,7 +1,7 @@
 markdown
 # Satria Nugraha — Personal Landing Page
 
-A personal portfolio website crafted to present my profile, experience, skills, and project highlights in a clean and professional way. Built with [Astro](https://astro.build), this landing page is designed to make a strong first impression for recruiters, collaborators, and hiring teams.
+A personal portfolio and digital CV built with [Astro](https://astro.build) to present my professional profile, work history, technical strengths, and selected projects in a clean and credible format. The site is tailored for recruiters, hiring teams, and collaborators looking for an IT infrastructure specialist with a focus on Microsoft environments, system administration, and troubleshooting.
 
 - Live site: https://therealsatria.github.io/
 - Repository: https://github.com/therealsatria/therealsatria.github.io
@@ -12,14 +12,14 @@ A personal portfolio website crafted to present my profile, experience, skills, 
 
 This portfolio project showcases:
 
-- a strong personal introduction and professional positioning
-- a concise overview of my background and capabilities
-- selected technical skills across development, infrastructure, and workflow
-- professional experience in a structured timeline
-- featured projects with relevant technologies and outcomes
-- direct contact access for opportunities and networking
+- a clear professional introduction and positioning as a System Administrator / Microsoft Infrastructure specialist
+- a concise overview of background, technical strengths, and business impact
+- selected capabilities across Microsoft 365, Windows Server, Entra ID, Intune, Linux administration, and troubleshooting
+- a structured experience timeline with notable responsibilities and outcomes
+- featured project highlights with relevant technologies and enterprise context
+- direct contact access for opportunities, networking, and collaboration
 
-The design emphasizes clarity, readability, and a polished digital presence while keeping the experience fast, lightweight, and easy to maintain.
+The design emphasizes readability, performance, and a polished digital presence while keeping the site lightweight and easy to maintain.
 
 ---
 
@@ -29,12 +29,13 @@ The design emphasizes clarity, readability, and a polished digital presence whil
 | --- | --- |
 | Framework | [Astro](https://astro.build) |
 | Styling | Plain CSS with design tokens |
-| Interactivity | Vanilla JavaScript |
+| Interactivity | Minimal vanilla JavaScript for UI polish |
 | Typography | [Inter](https://fonts.google.com/specimen/Inter) |
 | Hosting | GitHub Pages |
-| CI/CD | GitHub Actions |
+| SEO / Metadata | Astro metadata + Open Graph + structured data |
+| Assets | SVG/PNG favicons, PWA manifest, downloadable resume |
 
-This project keeps the stack intentionally lightweight: no React/Vue/Svelte, no CSS framework, and no extra JavaScript bundler beyond Astro's built-in pipeline.
+This project keeps the stack intentionally lightweight while adding production-ready metadata, icon support, and a polished static portfolio presentation.
 
 ---
 
@@ -45,7 +46,8 @@ This project keeps the stack intentionally lightweight: no React/Vue/Svelte, no 
 - Accessibility-focused implementation with skip links, visible focus states, and reduced-motion support
 - Fast static output for lightweight page loading
 - Maintainable CSS variables for easy theme updates
-- SEO-friendly structure with metadata and semantic markup
+- SEO-friendly structure with metadata, canonical links, and structured data
+- PWA-ready browser and Apple touch icons with a web manifest
 - Deployment-ready setup for GitHub Pages
 
 ---
@@ -56,33 +58,41 @@ This project keeps the stack intentionally lightweight: no React/Vue/Svelte, no 
 therealsatria.github.io/
 ├── .github/
 │   └── workflows/
-│       └── main.yml            # GitHub Actions workflow
+│       └── main.yml                 # GitHub Actions workflow
 ├── public/
-│   ├── favicon.ico             # Browser favicon
-│   ├── favicon.svg             # SVG favicon
-│   └── satria-resume.pdf       # Downloadable resume
+│   ├── apple-touch-icon.png        # Apple touch icon
+│   ├── favicon-192.png             # Browser icon (192px)
+│   ├── favicon-512.png             # Browser icon (512px)
+│   ├── favicon.ico                 # Legacy browser favicon
+│   ├── favicon.svg                 # SVG favicon
+│   ├── manifest.webmanifest        # PWA / app manifest
+│   ├── robots.txt                  # Search engine instructions
+│   ├── llms.txt                    # LLM-friendly site map
+│   ├── llms-full.txt               # Expanded LLM content export
+│   └── satria-resume.pdf           # Downloadable resume
 ├── src/
 │   ├── components/
-│   │   ├── Header.astro        # Top navigation and mobile menu
-│   │   ├── Hero.astro          # Intro section and quick facts
-│   │   ├── About.astro         # Personal summary
-│   │   ├── Skills.astro        # Skill cards
-│   │   ├── Experience.astro    # Career timeline
-│   │   ├── Projects.astro      # Portfolio entries
-│   │   ├── Contact.astro       # Contact links and CTA
-│   │   └── Footer.astro        # Footer and timezone script
+│   │   ├── Header.astro            # Top navigation and mobile menu
+│   │   ├── Hero.astro              # Intro section and quick facts
+│   │   ├── About.astro             # Personal summary
+│   │   ├── Skills.astro            # Skill cards
+│   │   ├── Experience.astro        # Career timeline
+│   │   ├── Projects.astro          # Portfolio entries
+│   │   ├── Contact.astro           # Contact links and CTA
+│   │   └── Footer.astro            # Footer and timezone script
 │   ├── layouts/
-│   │   └── BaseLayout.astro    # HTML shell and metadata
+│   │   └── BaseLayout.astro        # HTML shell and metadata
 │   ├── pages/
-│   │   └── index.astro         # Main landing page
+│   │   └── index.astro             # Main landing page
 │   └── styles/
-│       └── global.css          # Global styles and design tokens
+│       └── global.css              # Global styles and design tokens
 ├── .gitignore
-├── astro.config.mjs            # Astro configuration
-├── package.json                # Scripts and dependencies
-├── tsconfig.json               # TypeScript config
-├── README.md                   # Project documentation
-└── package-lock.json
+├── astro.config.mjs                # Astro configuration
+├── package.json                    # Scripts and dependencies
+├── tsconfig.json                   # TypeScript config
+├── README.md                       # Project documentation
+├── package-lock.json
+└── .nojekyll
 ```
 
 ### Component Responsibilities
@@ -188,9 +198,11 @@ Because Astro outputs a static site, it can also be deployed to other static hos
 ## Customization
 
 - Content: update the data arrays in `src/components/Experience.astro`, `Skills.astro`, and `Projects.astro`
+- Branding: adjust the project title and metadata values in `src/pages/index.astro` and `src/components/SEO.astro`
 - Styling: adjust design tokens in `src/styles/global.css`
 - Typography: update the font loading in `src/layouts/BaseLayout.astro`
 - Resume: place the PDF in `public/` and reference it in the hero section
+- Icons: customize the favicon and manifest assets in `public/`
 
 ---
 
