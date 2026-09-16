@@ -1,32 +1,75 @@
 /* =========================================================
+   Global Stylesheet — Satria Nugraha Personal Landing Page
+   ---------------------------------------------------------
+   Structure:
+     1. Design tokens
+     2. Base / reset
+     3. Typography features (ss07)
+     4. Layout helpers
+     5. Header / navigation
+     6. Hero + At a Glance
+     7. Buttons
+     8. About
+     9. Skills
+    10. Experience
+    11. Projects
+    12. Contact
+    13. Footer
+    14. Responsive
+    15. Accessibility & motion
+   ========================================================= */
+
+
+/* =========================================================
    1. Design tokens
    ========================================================= */
 :root {
+  /* Colours */
   --bg: #ffffff;
   --bg-soft: #f7f8fa;
   --text: #141b24;
-  --muted: #5a6675;
+  --muted: #4a5568;              /* darken from #5a6675 for WCAG AA on small text */
   --border: #e3e7ec;
   --border-strong: #d2d8df;
   --accent: #14577f;
   --accent-dark: #0f4463;
   --accent-soft: #eef4f8;
+
+  /* Layout */
   --radius: 6px;
   --container: 1100px;
   --header-h: 64px;
+
+  /* Typography */
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+  /* OpenType features — ss07 enables the single-storey "a" in Inter.
+     cv11 is the alternate mapping in some Inter versions.
+     calt/kern/liga are standard refinements. */
+  --font-features: "ss07" 1, "cv11" 1, "calt" 1, "kern" 1, "liga" 1;
 }
+
 
 /* =========================================================
    2. Base / reset
    ========================================================= */
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 16px);
   -webkit-text-size-adjust: 100%;
+
+  /* Apply OpenType features globally */
+  font-feature-settings: var(--font-features);
+  font-variant-ligatures: common-ligatures;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -37,11 +80,16 @@ body {
   font-size: 16px;
   line-height: 1.65;
   font-weight: 400;
+  font-feature-settings: var(--font-features);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
 h1, h2, h3, h4 {
   margin: 0;
@@ -49,22 +97,50 @@ h1, h2, h3, h4 {
   letter-spacing: -0.015em;
   font-weight: 600;
   color: var(--text);
+  font-feature-settings: var(--font-features);
 }
 
-p { margin: 0 0 1rem; }
-p:last-child { margin-bottom: 0; }
+p {
+  margin: 0 0 1rem;
+}
+p:last-child {
+  margin-bottom: 0;
+}
 
-ul { margin: 0; padding: 0; }
+ul {
+  margin: 0;
+  padding: 0;
+}
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+/* Apply features to form controls for consistency */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-feature-settings: var(--font-features);
+}
+
+/* Focus rings */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 2px;
 }
 
+/* Skip link */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -75,7 +151,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   z-index: 200;
   border-radius: 0 0 var(--radius) 0;
 }
-.skip-link:focus { left: 0; }
+.skip-link:focus {
+  left: 0;
+}
+
 
 /* =========================================================
    3. Layout helpers
@@ -91,12 +170,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding: 88px 0;
   border-bottom: 1px solid var(--border);
 }
-.section:last-of-type { border-bottom: 0; }
+.section:last-of-type {
+  border-bottom: 0;
+}
 
 .eyebrow {
   display: block;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;              /* was 600 — lighter for a calmer look */
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
@@ -105,6 +186,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .section-title {
   font-size: clamp(1.4rem, 2.6vw, 1.75rem);
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
@@ -113,6 +195,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: var(--muted);
   margin-bottom: 44px;
 }
+
 
 /* =========================================================
    4. Header / navigation
@@ -136,12 +219,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .brand {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 500;              /* was 600 — lighter, more refined */
   letter-spacing: 0.01em;
   color: var(--text);
   text-decoration: none;
 }
-.brand:hover { text-decoration: none; color: var(--accent); }
+.brand:hover {
+  text-decoration: none;
+  color: var(--accent);
+}
 
 .site-nav ul {
   display: flex;
@@ -159,8 +245,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border-bottom: 2px solid transparent;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
-.site-nav a:hover { color: var(--text); text-decoration: none; }
-.site-nav a.is-active { color: var(--accent); border-bottom-color: var(--accent); }
+.site-nav a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+.site-nav a.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
 
 .nav-toggle {
   display: none;
@@ -172,14 +264,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding: 8px 12px;
   font-family: inherit;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text);
   cursor: pointer;
 }
-.nav-toggle:hover { border-color: var(--border-strong); }
+.nav-toggle:hover {
+  border-color: var(--border-strong);
+}
+
 
 /* =========================================================
-   5. Hero
+   5. Hero + At a Glance
    ========================================================= */
 .hero {
   padding: 96px 0 88px;
@@ -196,14 +291,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .hero-name {
   font-size: clamp(2rem, 5vw, 2.85rem);
-  font-weight: 700;
+  font-weight: 600;              /* was 700 — semibold reads more elegant */
   letter-spacing: -0.025em;
   margin-bottom: 12px;
 }
 
 .hero-title {
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 500;              /* was 600 — softer emphasis */
   color: var(--accent);
   margin: 0 0 20px;
 }
@@ -231,18 +326,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .facts h2 {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;              /* was 600 — lighter, matches new eyebrow */
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 16px;
 }
 
-.facts dl { margin: 0; }
+.facts dl {
+  margin: 0;
+}
 
 .facts dt {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;              /* was 600 — consistent with labels */
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
@@ -254,7 +351,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size: 0.925rem;
   color: var(--text);
 }
-.facts dd:last-child { margin-bottom: 0; }
+.facts dd:last-child {
+  margin-bottom: 0;
+}
+
 
 /* =========================================================
    6. Buttons
@@ -267,15 +367,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding: 11px 18px;
   font-family: inherit;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 600;              /* CTA stays semibold for emphasis */
   line-height: 1.2;
   border-radius: var(--radius);
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease;
 }
-.btn:hover { text-decoration: none; }
+.btn:hover {
+  text-decoration: none;
+}
 
 .btn-primary {
   background: var(--accent);
@@ -297,6 +400,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   background: var(--accent-soft);
 }
 
+
 /* =========================================================
    7. About
    ========================================================= */
@@ -305,7 +409,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size: 1rem;
   color: var(--muted);
 }
-.about-body strong { color: var(--text); font-weight: 600; }
+.about-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 
 /* =========================================================
    8. Skills
@@ -325,6 +433,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .skill-card h3 {
   font-size: 0.95rem;
+  font-weight: 600;
   margin-bottom: 16px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
@@ -341,7 +450,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding-left: 16px;
   margin-bottom: 8px;
 }
-.skill-list li:last-child { margin-bottom: 0; }
+.skill-list li:last-child {
+  margin-bottom: 0;
+}
 
 .skill-list li::before {
   content: "";
@@ -354,6 +465,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   background: var(--border-strong);
 }
 
+
 /* =========================================================
    9. Experience
    ========================================================= */
@@ -364,9 +476,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding: 32px 0;
   border-top: 1px solid var(--border);
 }
-.job:first-of-type { border-top: 1px solid var(--border-strong); }
+.job:first-of-type {
+  border-top: 1px solid var(--border-strong);
+}
 
-.job-role { font-size: 1.025rem; margin-bottom: 4px; }
+.job-role {
+  font-size: 1.025rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
 
 .job-company {
   font-size: 0.9rem;
@@ -393,7 +511,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding-left: 18px;
   margin-bottom: 9px;
 }
-.job-points li:last-child { margin-bottom: 0; }
+.job-points li:last-child {
+  margin-bottom: 0;
+}
 
 .job-points li::before {
   content: "";
@@ -404,6 +524,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   height: 1px;
   background: var(--border-strong);
 }
+
 
 /* =========================================================
    10. Projects
@@ -421,13 +542,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border-radius: var(--radius);
   padding: 24px;
   background: #fff;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
-.project:hover { border-color: var(--border-strong); }
+.project:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
 
-.project-title { font-size: 1rem; margin-bottom: 10px; }
+.project-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
-.project-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 18px; }
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
 
 .tags {
   display: flex;
@@ -456,6 +590,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding-top: 4px;
 }
 
+
 /* =========================================================
    11. Contact
    ========================================================= */
@@ -475,17 +610,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border-bottom: 1px solid var(--border);
   font-size: 0.925rem;
 }
-.contact-list li:first-child { border-top: 1px solid var(--border); }
+.contact-list li:first-child {
+  border-top: 1px solid var(--border);
+}
 
 .contact-label {
   display: block;
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 500;              /* was 600 — lighter, matches new label scale */
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 3px;
 }
+
 
 /* =========================================================
    12. Footer
@@ -519,19 +657,35 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   list-style: none;
 }
 
+
 /* =========================================================
    13. Responsive
    ========================================================= */
 @media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .job { grid-template-columns: 1fr; gap: 16px; }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .job {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 @media (max-width: 760px) {
-  .section { padding: 64px 0; }
-  .hero { padding: 64px 0 60px; }
-  .nav-toggle { display: inline-flex; }
+  .section {
+    padding: 64px 0;
+  }
+  .hero {
+    padding: 64px 0 60px;
+  }
+  .nav-toggle {
+    display: inline-flex;
+  }
   .site-nav {
     position: absolute;
     top: 100%;
@@ -542,7 +696,44 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     border-bottom: 1px solid var(--border);
     padding: 8px 0 12px;
   }
-  .site-nav.is-open { display: block; }
-  .site-nav ul { flex-direction: column; gap: 0; padding: 0 24px; }
-  .site-nav a { display: block; padding: 10px 0; border-bottom: 0; }
+  .site-nav.is-open {
+    display: block;
+  }
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 24px;
+  }
+  .site-nav a {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 0;
+  }
+}
+
+
+/* =========================================================
+   14. Accessibility & motion
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Fallback for browsers that don't support font-feature-settings —
+   the double-storey "a" is used and everything else remains intact. */
+@supports not (font-feature-settings: "ss07" 1) {
+  html,
+  body {
+    font-feature-settings: normal;
+  }
 }
