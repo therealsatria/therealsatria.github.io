@@ -60,9 +60,9 @@ const structuredData = {
       givenName: 'Satria',
       familyName: 'Nugraha',
       alternateName: 'therealsatria',
-      jobTitle: 'Software Developer & IT Infrastructure Professional',
+      jobTitle: 'System Administrator & Microsoft Infrastructure Specialist',
       description:
-        'Software developer and IT infrastructure professional based in Lamongan, East Java, Indonesia. Focused on backend development, system administration, troubleshooting, and root cause analysis. Open to remote work and relocation.',
+        'IT infrastructure professional specialising in Microsoft environments — Windows Server, Microsoft 365, Entra ID, and Intune — based in Lamongan, East Java, Indonesia. Open to remote work and relocation.',
       url: siteUrl.href,
       image: {
         '@type': 'ImageObject',
@@ -85,22 +85,26 @@ const structuredData = {
         { '@type': 'Language', name: 'English', alternateName: 'en' },
       ],
       knowsAbout: [
-        'Software Development',
-        'Backend Development',
-        'REST API Development',
+        'Windows Server Administration',
+        'Microsoft 365 Administration',
+        'Entra ID (Azure AD)',
+        'Active Directory',
+        'Microsoft Intune',
+        'Group Policy Management',
         'System Administration',
         'IT Infrastructure',
         'Linux Administration',
-        'Windows Server Administration',
-        'Microsoft 365 Administration',
-        'Active Directory',
-        'Networking (TCP/IP, DNS, DHCP)',
         'Troubleshooting',
         'Root Cause Analysis',
+        'Incident Management',
+        'Virtualization',
+        'Networking (TCP/IP, DNS, DHCP)',
         'PowerShell Scripting',
         'Bash Scripting',
         'Technical Documentation',
-        'Incident Management',
+        'IT Asset Management',
+        'Git',
+        'Docker',
       ],
       sameAs: [
         'https://www.linkedin.com/in/satrianug',
@@ -116,13 +120,13 @@ const structuredData = {
       },
       hasOccupation: {
         '@type': 'Occupation',
-        name: 'Software Developer',
+        name: 'System Administrator',
         occupationLocation: {
           '@type': 'Country',
           name: 'Indonesia',
         },
         skills:
-          'Backend Development, System Administration, IT Infrastructure, Troubleshooting, Root Cause Analysis',
+          'Microsoft 365, Windows Server, Entra ID, Intune, Active Directory, Linux Administration, Troubleshooting, Root Cause Analysis, PowerShell',
       },
       seeks: {
         '@type': 'Demand',
@@ -164,9 +168,9 @@ const structuredData = {
       '@type': 'WebSite',
       '@id': `${siteUrl.href}#website`,
       url: siteUrl.href,
-      name: 'Satria Nugraha — Software Developer & IT Professional',
+      name: 'Satria Nugraha — System Administrator & Microsoft Infrastructure Specialist',
       description:
-        'Personal portfolio and digital CV of Satria Nugraha, a software developer and IT infrastructure professional.',
+        'Personal portfolio and digital CV of Satria Nugraha, an IT infrastructure professional specialising in Microsoft environments.',
       publisher: { '@id': `${siteUrl.href}#person` },
       inLanguage: 'en',
       copyrightYear: new Date().getFullYear(),
@@ -282,7 +286,7 @@ const structuredData = {
 <meta property="og:image" content={ogImageURL.href} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Satria Nugraha — Software Developer & IT Professional" />
+<meta property="og:image:alt" content="Satria Nugraha — System Administrator & Microsoft Infrastructure Specialist" />
 <meta property="og:site_name" content="Satria Nugraha" />
 <meta property="og:locale" content="en_US" />
 
@@ -293,7 +297,7 @@ const structuredData = {
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageURL.href} />
-<meta name="twitter:image:alt" content="Satria Nugraha — Software Developer" />
+<meta name="twitter:image:alt" content="Satria Nugraha — System Administrator & Microsoft Infrastructure Specialist" />
 
 <!-- ========================================================= -->
 <!-- JSON-LD Structured Data -->

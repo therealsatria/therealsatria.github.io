@@ -1,10 +1,10 @@
-# Satria Nugraha — Software Developer & IT Infrastructure Professional
+# Satria Nugraha — System Administrator & Microsoft Infrastructure Specialist
 
-> Personal portfolio and digital CV of Satria Nugraha, a software developer and IT infrastructure professional based in Lamongan, East Java, Indonesia. Focused on backend development, system administration, troubleshooting, and root cause analysis. Open to remote work and relocation to GCC countries (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, and worldwide.
+> Personal portfolio and digital CV of Satria Nugraha, an IT infrastructure professional specialising in Microsoft environments — Windows Server, Microsoft 365, Entra ID, and Intune — based in Lamongan, East Java, Indonesia. Open to remote work and relocation to GCC, Japan, Malaysia, Singapore, and worldwide.
 
 ## About
 
-Satria Nugraha is a software developer and IT infrastructure professional with hands-on experience across backend development, system administration, and technical consulting. His work centres on building dependable systems, diagnosing complex issues, and improving operational reliability.
+Satria Nugraha is an IT infrastructure professional specialising in Microsoft environments, with hands-on experience across system administration, technical consulting, and backend development. His work centres on keeping dependable systems running, diagnosing complex issues, and improving operational reliability.
 
 He has supported healthcare IT environments, delivered technical solutions for enterprise clients, and developed backend services in project-based settings. His approach is methodical: understand the root cause, fix it properly, and document the outcome.
 
@@ -13,10 +13,10 @@ Currently based in Lamongan, East Java, Indonesia. Open to international opportu
 ## Key Facts
 
 - **Name:** Satria Nugraha
-- **Title:** Software Developer & IT Infrastructure Professional
+- **Title:** System Administrator & Microsoft Infrastructure Specialist
 - **Location:** Lamongan, East Java, Indonesia
-- **Primary focus:** Software Development (Backend)
-- **Secondary focus:** System Administration & IT Infrastructure
+- **Primary focus:** System Administration & Microsoft Infrastructure
+- **Secondary focus:** Linux Administration & Troubleshooting
 - **Availability:** Remote work and relocation
 - **Target regions:** GCC (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, worldwide
 - **Languages:** Indonesian (native), English (professional)
@@ -32,9 +32,9 @@ Currently based in Lamongan, East Java, Indonesia. Open to international opportu
 
 ## Skills
 
-- **Development:** Backend development, REST APIs, OOP, MVC, relational databases & SQL, Git & GitHub, debugging, HTML/CSS/JavaScript
-- **Infrastructure:** Linux server administration, Windows Server administration, Microsoft 365, Active Directory, networking (TCP/IP, DNS, DHCP), cloud & VPS, backup & recovery
-- **Tools & Practices:** Troubleshooting, root cause analysis, PowerShell & Bash scripting, technical documentation, incident handling, end-user support, IT asset management
+- **Microsoft & Infrastructure:** Windows Server administration, Microsoft 365 administration, Entra ID (Azure AD) & Active Directory, Microsoft Intune, Group Policy management, troubleshooting & root cause analysis, incident handling & escalation, end-user & vendor support
+- **Linux & Systems:** Linux administration (Debian-based), virtualization (VMware / Hyper-V / Proxmox), networking fundamentals (TCP/IP, DNS, DHCP), backup, recovery & system hardening, cloud & VPS services, object storage, Microsoft 365 administration
+- **Practices & Tooling:** PowerShell scripting, Bash scripting, technical documentation & runbooks, IT asset & change management, Git & Version Control, Docker (basic)
 
 ## Selected Projects
 
