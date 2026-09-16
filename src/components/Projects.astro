@@ -20,12 +20,15 @@ const projects = [
 <section id="projects" class="section">
   <div class="container">
     <p class="eyebrow">Projects</p>
-    <h2 class="section-title">Selected work</h2>
+    <h2 class="section-title">Selected Software &amp; Infrastructure Projects</h2>
     <p class="section-intro">
       A mix of software development and infrastructure/scripting work.
     </p>
 
-    <div class="projects-grid">
+    <div
+      class="projects-grid"
+      aria-label="Software development and IT infrastructure projects by Satria Nugraha"
+    >
       {projects.map((project) => (
         <article class="project">
           <h3 class="project-title">{project.title}</h3>

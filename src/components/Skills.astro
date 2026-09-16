@@ -40,13 +40,16 @@ const skillGroups = [
 <section id="skills" class="section">
   <div class="container">
     <p class="eyebrow">Skills</p>
-    <h2 class="section-title">Technical capabilities</h2>
+    <h2 class="section-title">Software &amp; Infrastructure Skills</h2>
     <p class="section-intro">
-      A practical, hands-on skill set covering software development and the
-      infrastructure that supports it.
+      A practical skill set covering <strong>software development</strong> and
+      the <strong>IT infrastructure</strong> that supports it.
     </p>
 
-    <div class="skills-grid">
+    <div
+      class="skills-grid"
+      aria-label="Software development and IT infrastructure skills"
+    >
       {skillGroups.map((group) => (
         <div class="skill-card">
           <h3>{group.title}</h3>
