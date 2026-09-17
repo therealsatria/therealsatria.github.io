@@ -41,6 +41,7 @@ const links = {
           LinkedIn
         </a>
         <a class="btn btn-outline" href="#contact">Contact</a>
+        <button class="btn btn-outline" type="button" data-profile-open>Profile Picture</button>
       </div>
     </div>
 
@@ -71,4 +72,66 @@ const links = {
       </dl>
     </aside>
   </div>
+
+  <dialog class="profile-modal" data-profile-modal aria-labelledby="profile-modal-title">
+    <div class="profile-modal-inner">
+      <div class="profile-modal-header">
+        <h2 id="profile-modal-title">Profile Picture</h2>
+        <button class="modal-close" type="button" data-profile-close aria-label="Close profile picture">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <img
+        class="profile-image"
+        src="/satria-photo.webp"
+        alt="Satria Nugraha"
+        width="640"
+        height="640"
+      />
+      <div class="profile-modal-actions">
+        <label class="profile-url-label" for="profile-url">Image URL</label>
+        <input id="profile-url" class="profile-url" type="text" readonly value="/satria-photo.webp" data-profile-url />
+        <button class="btn btn-primary" type="button" data-profile-copy>Copy Image URL</button>
+        <p class="copy-status" data-copy-status role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </dialog>
 </section>
+
+<script>
+  const modal = document.querySelector('[data-profile-modal]');
+  const openButton = document.querySelector('[data-profile-open]');
+  const closeButton = document.querySelector('[data-profile-close]');
+  const copyButton = document.querySelector('[data-profile-copy]');
+  const urlInput = document.querySelector('[data-profile-url]');
+  const copyStatus = document.querySelector('[data-copy-status]');
+
+  if (
+    modal instanceof HTMLDialogElement &&
+    openButton instanceof HTMLButtonElement &&
+    closeButton instanceof HTMLButtonElement &&
+    copyButton instanceof HTMLButtonElement &&
+    urlInput instanceof HTMLInputElement &&
+    copyStatus instanceof HTMLElement
+  ) {
+    const imageUrl = new URL('/satria-photo.webp', window.location.origin).href;
+    urlInput.value = imageUrl;
+
+    openButton.addEventListener('click', () => modal.showModal());
+    closeButton.addEventListener('click', () => modal.close());
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) modal.close();
+    });
+
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(imageUrl);
+        copyStatus.textContent = 'Copied';
+      } catch {
+        urlInput.select();
+        copyStatus.textContent = 'Select and copy the URL manually';
+      }
+    });
+  }
+</script>

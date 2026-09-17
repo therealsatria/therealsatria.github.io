@@ -340,6 +340,16 @@ select:focus-visible {
   gap: 12px;
 }
 
+.hero-cta .btn {
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.hero-cta .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(20, 27, 36, 0.12);
+}
+
 /* --- At a Glance panel --- */
 .facts {
   background: #fff;
@@ -422,6 +432,129 @@ select:focus-visible {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--accent-soft);
+}
+
+.profile-modal {
+  width: min(92vw, 520px);
+  padding: 0;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
+  backdrop-filter: saturate(160%) blur(18px);
+  box-shadow: 0 18px 48px rgba(20, 27, 36, 0.2);
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 0.22s ease, transform 0.22s ease,
+    overlay 0.22s ease allow-discrete, display 0.22s ease allow-discrete;
+  animation: profile-modal-in 0.22s ease both;
+}
+
+.profile-modal::backdrop {
+  background: rgba(20, 27, 36, 0.58);
+  transition: background 0.22s ease;
+}
+
+@starting-style {
+  .profile-modal[open] {
+    opacity: 0;
+    transform: scale(0.96) translateY(12px);
+  }
+
+  .profile-modal[open]::backdrop {
+    background: rgba(20, 27, 36, 0);
+  }
+}
+
+@keyframes profile-modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.profile-modal-inner {
+  padding: 12px;
+}
+
+.profile-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.profile-modal-header h2 {
+  font-size: 1.1rem;
+}
+
+.modal-close {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  padding: 0;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+  background: var(--bg-soft);
+}
+
+.profile-image {
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: transparent;
+}
+
+.profile-modal-actions {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.profile-url-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.profile-url {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 10px;
+  color: var(--muted);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+}
+
+.copy-status {
+  min-height: 0;
+  margin: 0;
+  color: #2f855a;
+  font-size: 0.8rem;
 }
 
 
