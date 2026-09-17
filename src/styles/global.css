@@ -64,6 +64,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 16px);
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 
   /* Apply OpenType features globally */
   font-feature-settings: var(--font-features);
@@ -80,6 +81,7 @@ body {
   font-size: 16px;
   line-height: 1.65;
   font-weight: 400;
+  overflow-x: clip;
   font-feature-settings: var(--font-features);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -336,6 +338,38 @@ select:focus-visible {
   font-weight: 600;              /* was 700 — semibold reads more elegant */
   letter-spacing: -0.025em;
   margin-bottom: 12px;
+  color: var(--text);
+  -webkit-text-stroke: 0.45px rgba(255, 255, 255, 0.88);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.95),
+    0 0 1px rgba(255, 255, 255, 0.95),
+    0 0 22px rgba(255, 255, 255, 0.48),
+    -22px 0 18px rgba(212, 160, 23, 0.35),
+    -42px 0 30px rgba(212, 160, 23, 0.12);
+  animation: hero-name-shadow 14s ease-in-out alternate infinite;
+}
+
+@keyframes hero-name-shadow {
+  0% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.95),
+      0 0 1px rgba(255, 255, 255, 0.95),
+      0 0 22px rgba(255, 255, 255, 0.48),
+      -22px 0 18px rgba(212, 160, 23, 0.35),
+      -42px 0 30px rgba(212, 160, 23, 0.12);
+  }
+  50% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.95),
+      0 0 1px rgba(255, 255, 255, 0.95),
+      0 0 22px rgba(255, 255, 255, 0.48),
+      0 0 18px rgba(212, 160, 23, 0.35),
+      0 0 30px rgba(212, 160, 23, 0.12);
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.95),
+      0 0 1px rgba(255, 255, 255, 0.95),
+      0 0 22px rgba(255, 255, 255, 0.48),
+      22px 0 18px rgba(212, 160, 23, 0.35),
+      42px 0 30px rgba(212, 160, 23, 0.12);
+  }
 }
 
 .hero-title {
@@ -970,6 +1004,12 @@ select:focus-visible {
     animation: none;
     opacity: 0.35;
     transform: translateX(70%);
+  }
+  .hero-name {
+    animation: none;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.95),
+      0 0 1px rgba(255, 255, 255, 0.95),
+      0 0 22px rgba(255, 255, 255, 0.48);
   }
   *,
   *::before,
