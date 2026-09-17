@@ -471,6 +471,10 @@ select:focus-visible {
 
 .profile-modal {
   width: min(92vw, 520px);
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px);
+  margin: auto;
   padding: 0;
   color: var(--text);
   border: 1px solid var(--border-strong);
@@ -484,6 +488,8 @@ select:focus-visible {
   transition: opacity 0.22s ease, transform 0.22s ease,
     overlay 0.22s ease allow-discrete, display 0.22s ease allow-discrete;
   animation: profile-modal-in 0.22s ease both;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .profile-modal::backdrop {
@@ -582,7 +588,7 @@ select:focus-visible {
   background: var(--bg-soft);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .copy-status {
