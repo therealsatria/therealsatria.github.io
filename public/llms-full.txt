@@ -4,120 +4,126 @@
 
 ## Person Profile
 
-**Name:** Satria Nugraha
-**Title:** System Administrator & Microsoft Infrastructure Specialist
-**Location:** Lamongan, East Java, Indonesia
-**Nationality:** Indonesian
-**Languages:** Indonesian (native), English (professional)
-**Contact:** satrianug@live.com
-**WhatsApp:** +62 813-3287-5050
-**LinkedIn:** https://www.linkedin.com/in/satrianug
-**GitHub:** https://github.com/therealsatria
+**Name:** Satria Nugraha  
+**Title:** System Administrator & Microsoft Cloud Specialist  
+**Location:** Lamongan, East Java, Indonesia  
+**Nationality:** Indonesian  
+**Languages:** Indonesian (native), English (professional)  
+**Contact:** satrianug@live.com  
+**WhatsApp:** +62 813-3287-5050  
+**LinkedIn:** https://www.linkedin.com/in/satrianug  
+**GitHub:** https://github.com/therealsatria  
 
 ## Professional Summary
 
-I am an IT infrastructure professional specialising in Microsoft environments, based in Lamongan, East Java, Indonesia. My background combines Microsoft infrastructure and hands-on system administration with supporting backend development, which means I understand both the application layer and the environment it runs on. I have worked as a Technical Consultant, a System Administrator, and a backend developer - often as the person clients and colleagues turn to when something breaks and the cause is not obvious.
+IT professional with experience in system administration, cloud support, and IT infrastructure. Skilled in troubleshooting, server administration, Microsoft 365, Linux, and cloud services. Strong background in root cause analysis and resolving complex technical issues. Known for being reliable, adaptable, and effective in both technical and client-facing environments.
 
-My strongest skill is troubleshooting and root cause analysis. I prefer to find out why an issue happened rather than apply a temporary fix, and I document the result so it does not come back. I work carefully, communicate clearly, and take ownership of the systems I am responsible for - including a period as the sole IT person for a hospital environment, where reliability was not optional.
+I have worked as a Technical Consultant (Microsoft Cloud), System Administrator, and currently as an independent IT Freelance. My strongest skill is troubleshooting and root cause analysis — I prefer to find out why an issue happened rather than apply a temporary fix, and I document the result so it does not come back. I take ownership of the systems I am responsible for, including a period as the sole IT person for a hospital environment, where reliability was not optional.
 
-I am open to international opportunities, including remote roles and relocation to the GCC region (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, and other markets. I adapt quickly to new environments, tools, and working cultures.
+Open to System Administrator, Cloud Support, and Infrastructure roles, including international opportunities (remote or relocation).
 
 ## Skills
 
-### Microsoft & Infrastructure
-- Windows Server administration
-- Microsoft 365 administration
-- Entra ID (Azure AD) & Active Directory
-- Microsoft Intune
-- Group Policy management
-- Troubleshooting & root cause analysis
-- Incident handling & escalation
-- End-user & vendor support
+### Technical Skills
+- Troubleshooting
+- Server Administration
+- Linux Administration
+- System Administration
+- IT Infrastructure
+- Firewalls
+- Microsoft 365 Administration
+- Windows Server
+- Entra ID
+- Active Directory
+- Defender for Office 365
+- Network Security (OPNsense, MikroTik)
+- Virtualization (Proxmox)
 
-### Linux & Systems
-- Linux administration (Debian-based)
-- Virtualization (VMware / Hyper-V / Proxmox)
-- Networking fundamentals (TCP/IP, DNS, DHCP)
-- Backup, recovery & system hardening
-- Cloud & VPS services, object storage
-- Microsoft 365 administration
-
-### Practices & Tooling
-- PowerShell scripting
-- Bash scripting
-- Technical documentation & runbooks
-- IT asset & change management
-- Git & Version Control
-- Docker (basic)
+### Additional Skills
+- Problem Solving
+- Critical Thinking
+- Root Cause Analysis
+- Stakeholder Communication
 
 ## Experience
 
-### Sales Executive - PT Dwijaya Adiwahana (ISUZU Jombang)
-**Period:** Mar 2026 - Present
-**Location:** Jombang, East Java, Indonesia
+### IT Freelance — Self-Employed
+**Period:** Mar 2026 – Present  
+**Location:** Jombang, Indonesia
 
-- Engaged with commercial clients to understand operational requirements.
-- Coordinated internal teams to support delivery and after-sales processes.
+- Designed and implemented network security infrastructure using OPNsense on x86 hardware for a hospital environment.
+- Built a Proxmox lab environment to test and validate OPNsense configurations prior to production deployment.
+- Configured and deployed MikroTik routers to support hospital network requirements.
+- Developed landing page websites for colleagues and small clients.
+- Provided technical support and infrastructure assistance on a project basis.
 
-### Technical Consultant - Solutionlabs Group
-**Period:** Aug 2024 - Nov 2025
+### Technical Consultant L2 (Microsoft Cloud) — Solutionlabs Group
+**Period:** Aug 2024 – Nov 2025  
 **Location:** Yogyakarta, Indonesia
 
-- Managed Microsoft 365 environments and supported server infrastructure to maintain system availability.
-- Handled escalated technical issues, performed root cause analysis, and implemented permanent solutions.
-- Conducted preventive maintenance and prepared technical reports for decision-making.
+- Handled escalated technical issues, performed root cause analysis, and implemented solutions to improve system reliability.
+- Managed Microsoft 365 environments and supported server infrastructure to ensure system availability.
 - Collaborated with teams to improve cloud infrastructure and operational processes.
+- Conducted preventive maintenance and prepared technical reports to support informed decision-making.
 
-### Backend Developer (Project-based) - Solutionlabs Group
-**Period:** Nov 2024 - Jan 2025
-**Location:** Yogyakarta, Indonesia
-
-- Developed and maintained RESTful APIs using .NET Core as part of a separate project engagement.
-- Supported integration work and troubleshooting alongside primary Technical Consultant responsibilities.
-
-### Technical Consultant - PT Mitra Integrasi Informatika (Metrodata Group)
-**Period:** Jun 2023 - Jun 2024
+### Technical Consultant Analyst (Microsoft Cloud) — PT Mitra Integrasi Informatika
+**Period:** Jun 2023 – Jun 2024  
 **Location:** Jakarta, Indonesia
 
-- Conducted system assessments and gap analyses for enterprise clients.
-- Provided technical support and troubleshooting during implementation phases.
+- Conducted system assessments and gap analyses to identify and address client needs.
+- Supported deployment and maintenance of Microsoft-related solutions and infrastructure components.
+- Provided technical support and troubleshooting to ensure successful implementation of solutions.
 - Delivered knowledge transfer sessions and created technical documentation.
-- Supported Microsoft-related solutions and infrastructure components.
 
-### IT System Administrator - Mutiara Hati Hospital
-**Period:** Jan 2020 - Jun 2023
+### IT System Administrator — Mutiara Hati Hospital
+**Period:** Jan 2020 – Jun 2023  
 **Location:** Mojokerto, Indonesia
 
-- Managed end-to-end IT operations as the sole technical person (network, servers, Linux, and user support).
 - Administered servers (Web, SQL, File Servers) and Linux environments to support 24/7 hospital operations.
+- Managed end-to-end IT operations as sole technical resource, ensuring seamless network, server, Linux, and user support.
 - Developed and maintained internal web and desktop applications to support hospital processes.
-- Handled hardware, software, PABX, and CCTV systems across the facility.
+- Provided end-user technical support for hardware, software, and operating systems, resolving issues to minimize downtime.
+- Handled hardware, software, PABX, and CCTV systems, enhancing operational reliability across the facility.
+
+## Education
+
+**Universitas Pesantren Tinggi Darul Ulum**  
+Bachelor of Information Systems  
+Aug 2015 – Aug 2019  
+Jombang, Indonesia  
+GPA: 3.29
 
 ## Projects
+
+### Hospital Network Security Infrastructure (OPNsense)
+Designed and implemented network security infrastructure using OPNsense on x86 hardware for a hospital environment. Built a Proxmox lab to validate configurations before production deployment and configured MikroTik routers to meet hospital network requirements.
+
+**Technologies:** OPNsense, Proxmox, MikroTik, Networking, Firewalls
 
 ### Windows Server Hardening Script
 A PowerShell toolkit that applies a baseline security configuration to Windows Server hosts: account and audit policies, SMB signing, and unnecessary service reduction. Idempotent, and logs every change for audit purposes.
 
-**Technologies:** PowerShell, Windows Server, Group Policy
+**Technologies:** PowerShell, Windows Server  
 **Repository:** https://github.com/therealsatria
 
 ### Personal Portfolio Website
-This site - a single-page, dependency-free landing page built with semantic HTML, modern CSS, and vanilla JavaScript. Deployed on GitHub Pages.
+A single-page, dependency-free landing page built with semantic HTML, modern CSS, and vanilla JavaScript. Deployed on GitHub Pages.
 
-**Technologies:** HTML, CSS, JavaScript, GitHub Pages
+**Technologies:** HTML, CSS, JavaScript, GitHub Pages  
 **Repository:** https://github.com/therealsatria/therealsatria.github.io
 
 ## Availability
 
-Open to full-time roles and contract engagements - remote or on-site with relocation.
+Open to System Administrator, Cloud Support, and Infrastructure roles — full-time or contract, remote or on-site with relocation.
 
-**Target regions:** GCC (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, worldwide.
-**Notice period:** 1 month.
+**Target regions:** GCC (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, and worldwide.  
+**Notice period:** 1 month.  
 **Visa sponsorship:** Required.
 
 ## Contact
 
-- **Email:** satrianug@live.com
-- **WhatsApp:** +62 813-3287-5050
-- **LinkedIn:** https://www.linkedin.com/in/satrianug
-- **GitHub:** https://github.com/therealsatria
+- **Email:** satrianug@live.com  
+- **WhatsApp:** +62 813-3287-5050  
+- **LinkedIn:** https://www.linkedin.com/in/satrianug  
+- **GitHub:** https://github.com/therealsatria  
+- **Portfolio:** https://therealsatria.github.io/

@@ -1,22 +1,22 @@
-# Satria Nugraha - System Administrator & Microsoft Infrastructure Specialist
+# Satria Nugraha - System Administrator & Microsoft Cloud Specialist
 
-> Personal portfolio and digital CV of Satria Nugraha, an IT infrastructure professional specialising in Microsoft environments - Windows Server, Microsoft 365, Entra ID, and Intune - based in Lamongan, East Java, Indonesia. Open to remote work and relocation to GCC, Japan, Malaysia, Singapore, and worldwide.
+> Personal portfolio and digital CV of Satria Nugraha, an IT professional with experience in system administration, cloud support, and IT infrastructure. Skilled in troubleshooting, server administration, Microsoft 365, Linux, and cloud services. Based in Lamongan, East Java, Indonesia. Open to System Administrator, Cloud Support, and Infrastructure roles, including international opportunities.
 
 ## About
 
-Satria Nugraha is an IT infrastructure professional specialising in Microsoft environments, with hands-on experience across system administration, technical consulting, and backend development. His work centres on keeping dependable systems running, diagnosing complex issues, and improving operational reliability.
+Satria Nugraha is an IT professional specialising in system administration, Microsoft cloud environments, and IT infrastructure. His work centres on keeping dependable systems running, diagnosing complex issues through root cause analysis, and improving operational reliability.
 
-He has supported healthcare IT environments, delivered technical solutions for enterprise clients, and developed backend services in project-based settings. His approach is methodical: understand the root cause, fix it properly, and document the outcome.
+He has supported healthcare IT environments as a sole System Administrator, delivered technical consulting for Microsoft 365 and server infrastructure, and currently works as an independent IT Freelance handling network security (OPNsense, MikroTik) and infrastructure projects.
 
-Currently based in Lamongan, East Java, Indonesia. Open to international opportunities - both remote and relocation.
+Currently based in Lamongan, East Java, Indonesia. Open to international opportunities — both remote and relocation.
 
 ## Key Facts
 
 - **Name:** Satria Nugraha
-- **Title:** System Administrator & Microsoft Infrastructure Specialist
+- **Title:** System Administrator & Microsoft Cloud Specialist
 - **Location:** Lamongan, East Java, Indonesia
-- **Primary focus:** System Administration & Microsoft Infrastructure
-- **Secondary focus:** Linux Administration & Troubleshooting
+- **Primary focus:** System Administration & Microsoft Cloud
+- **Secondary focus:** Linux Administration, Firewalls & Troubleshooting
 - **Availability:** Remote work and relocation
 - **Target regions:** GCC (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, worldwide
 - **Languages:** Indonesian (native), English (professional)
@@ -24,21 +24,20 @@ Currently based in Lamongan, East Java, Indonesia. Open to international opportu
 
 ## Experience
 
-- **Sales Executive** at PT Dwijaya Adiwahana (ISUZU Jombang) - Mar 2026-Present
-- **Technical Consultant** at Solutionlabs Group - Aug 2024-Nov 2025
-- **Backend Developer** (Project-based) at Solutionlabs Group - Nov 2024-Jan 2025
-- **Technical Consultant** at PT Mitra Integrasi Informatika (Metrodata Group) - Jun 2023-Jun 2024
-- **IT System Administrator** at Mutiara Hati Hospital - Jan 2020-Jun 2023
+- **IT Freelance** (Self-Employed) - Mar 2026–Present
+- **Technical Consultant L2 (Microsoft Cloud)** at Solutionlabs Group - Aug 2024–Nov 2025
+- **Technical Consultant Analyst (Microsoft Cloud)** at PT Mitra Integrasi Informatika - Jun 2023–Jun 2024
+- **IT System Administrator** at Mutiara Hati Hospital - Jan 2020–Jun 2023
 
 ## Skills
 
-- **Microsoft & Infrastructure:** Windows Server administration, Microsoft 365 administration, Entra ID (Azure AD) & Active Directory, Microsoft Intune, Group Policy management, troubleshooting & root cause analysis, incident handling & escalation, end-user & vendor support
-- **Linux & Systems:** Linux administration (Debian-based), virtualization (VMware / Hyper-V / Proxmox), networking fundamentals (TCP/IP, DNS, DHCP), backup, recovery & system hardening, cloud & VPS services, object storage, Microsoft 365 administration
-- **Practices & Tooling:** PowerShell scripting, Bash scripting, technical documentation & runbooks, IT asset & change management, Git & Version Control, Docker (basic)
+- **Technical Skills:** Troubleshooting, Server Administration, Linux Administration, System Administration, IT Infrastructure, Firewalls, Microsoft 365 Administration, Windows Server, Entra ID, Active Directory, Defender for Office 365, Network Security (OPNsense, MikroTik), Virtualization (Proxmox)
+- **Additional Skills:** Problem Solving, Critical Thinking, Root Cause Analysis, Stakeholder Communication
 
 ## Selected Projects
 
-- [Windows Server Hardening Script](https://github.com/therealsatria): A PowerShell toolkit that applies a baseline security configuration to Windows Server hosts - account and audit policies, SMB signing, and unnecessary service reduction.
+- **Hospital Network Security Infrastructure (OPNsense):** Designed and implemented network security using OPNsense on x86 hardware for a hospital environment, with Proxmox lab validation and MikroTik router configuration.
+- [Windows Server Hardening Script](https://github.com/therealsatria): A PowerShell toolkit that applies a baseline security configuration to Windows Server hosts.
 - [Personal Portfolio Website](https://therealsatria.github.io/): A single-page, dependency-free landing page built with semantic HTML, modern CSS, and vanilla JavaScript.
 
 ## Contact
