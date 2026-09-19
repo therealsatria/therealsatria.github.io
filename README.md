@@ -193,6 +193,18 @@ For first-time setup:
 
 Because Astro outputs a static site, it can also be deployed to other static hosts such as Netlify, Vercel, or Cloudflare Pages with minimal configuration.
 
+### Fresh content after deployment
+
+The production page is static HTML. Astro already fingerprints its generated assets, so CSS and JavaScript changes are cache-safe. GitHub Pages controls the HTTP cache headers and may serve an existing HTML response briefly while its CDN propagates a new deployment; this cannot be disabled from an Astro repository.
+
+For the normal workflow:
+
+1. Wait until the `Deploy to GitHub Pages` workflow is green, not only until the build job finishes.
+2. Open the deployed URL in Chrome and perform a normal refresh. Avoid adding a client-side auto-reload, since it can interrupt visitors and does not purge the CDN.
+3. If the old page remains, check the response in DevTools Network with `Disable cache` enabled, then try an incognito window. If both show the old page, wait for GitHub Pages CDN propagation and confirm the deployment commit in repository Settings > Pages.
+
+If immediate cache control is a hard requirement, use a host that supports response headers and configure HTML responses with `Cache-Control: no-cache, must-revalidate` (or `max-age=0, must-revalidate`) while keeping long-lived caching for fingerprinted assets. A custom domain or a reverse proxy/CDN with purge support can also provide an explicit cache purge.
+
 ---
 
 ## Customization
