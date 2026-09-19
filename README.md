@@ -1,5 +1,5 @@
 markdown
-# Satria Nugraha — Personal Landing Page
+# Satria Nugraha - Personal Landing Page
 
 A personal portfolio and digital CV built with [Astro](https://astro.build) to present my professional profile, work history, technical strengths, and selected projects in a clean and credible format. The site is tailored for recruiters, hiring teams, and collaborators looking for an IT infrastructure specialist with a focus on Microsoft environments, system administration, and troubleshooting.
 

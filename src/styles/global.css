@@ -1,5 +1,5 @@
 /* =========================================================
-   Global Stylesheet — Satria Nugraha Personal Landing Page
+   Global Stylesheet - Satria Nugraha Personal Landing Page
    ---------------------------------------------------------
    Structure:
      1. Design tokens
@@ -44,7 +44,7 @@
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 
-  /* OpenType features — ss07 enables the single-storey "a" in Inter.
+  /* OpenType features - ss07 enables the single-storey "a" in Inter.
      cv11 is the alternate mapping in some Inter versions.
      calt/kern/liga are standard refinements. */
   --font-features: "ss07" 1, "cv11" 1, "calt" 1, "kern" 1, "liga" 1;
@@ -179,7 +179,7 @@ select:focus-visible {
 .eyebrow {
   display: block;
   font-size: 0.75rem;
-  font-weight: 500;              /* was 600 — lighter for a calmer look */
+  font-weight: 500;              /* was 600 - lighter for a calmer look */
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
@@ -259,7 +259,7 @@ select:focus-visible {
 
 .brand {
   font-size: 0.95rem;
-  font-weight: 500;              /* was 600 — lighter, more refined */
+  font-weight: 500;              /* was 600 - lighter, more refined */
   letter-spacing: 0.01em;
   color: var(--text);
   text-decoration: none;
@@ -335,7 +335,7 @@ select:focus-visible {
 
 .hero-name {
   font-size: clamp(2rem, 5vw, 2.85rem);
-  font-weight: 600;              /* was 700 — semibold reads more elegant */
+  font-weight: 600;              /* was 700 - semibold reads more elegant */
   letter-spacing: -0.025em;
   margin-bottom: 12px;
   color: var(--text);
@@ -374,7 +374,7 @@ select:focus-visible {
 
 .hero-title {
   font-size: 1.05rem;
-  font-weight: 500;              /* was 600 — softer emphasis */
+  font-weight: 500;              /* was 600 - softer emphasis */
   color: var(--accent);
   margin: 0 0 20px;
 }
@@ -429,7 +429,7 @@ select:focus-visible {
 
 .facts h2 {
   font-size: 0.75rem;
-  font-weight: 500;              /* was 600 — lighter, matches new eyebrow */
+  font-weight: 500;              /* was 600 - lighter, matches new eyebrow */
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -442,7 +442,7 @@ select:focus-visible {
 
 .facts dt {
   font-size: 0.75rem;
-  font-weight: 500;              /* was 600 — consistent with labels */
+  font-weight: 500;              /* was 600 - consistent with labels */
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
@@ -859,7 +859,7 @@ select:focus-visible {
 .contact-label {
   display: block;
   font-size: 0.72rem;
-  font-weight: 500;              /* was 600 — lighter, matches new label scale */
+  font-weight: 500;              /* was 600 - lighter, matches new label scale */
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -1021,7 +1021,7 @@ select:focus-visible {
   }
 }
 
-/* Fallback for browsers that don't support font-feature-settings —
+/* Fallback for browsers that don't support font-feature-settings -
    the double-storey "a" is used and everything else remains intact. */
 @supports not (font-feature-settings: "ss07" 1) {
   html,

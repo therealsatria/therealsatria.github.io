@@ -1,5 +1,5 @@
 # =============================================================
-# robots.txt — Satria Nugraha
+# robots.txt - Satria Nugraha
 # https://therealsatria.github.io/robots.txt
 # =============================================================
 

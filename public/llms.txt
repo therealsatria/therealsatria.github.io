@@ -1,6 +1,6 @@
-# Satria Nugraha — System Administrator & Microsoft Infrastructure Specialist
+# Satria Nugraha - System Administrator & Microsoft Infrastructure Specialist
 
-> Personal portfolio and digital CV of Satria Nugraha, an IT infrastructure professional specialising in Microsoft environments — Windows Server, Microsoft 365, Entra ID, and Intune — based in Lamongan, East Java, Indonesia. Open to remote work and relocation to GCC, Japan, Malaysia, Singapore, and worldwide.
+> Personal portfolio and digital CV of Satria Nugraha, an IT infrastructure professional specialising in Microsoft environments - Windows Server, Microsoft 365, Entra ID, and Intune - based in Lamongan, East Java, Indonesia. Open to remote work and relocation to GCC, Japan, Malaysia, Singapore, and worldwide.
 
 ## About
 
@@ -8,7 +8,7 @@ Satria Nugraha is an IT infrastructure professional specialising in Microsoft en
 
 He has supported healthcare IT environments, delivered technical solutions for enterprise clients, and developed backend services in project-based settings. His approach is methodical: understand the root cause, fix it properly, and document the outcome.
 
-Currently based in Lamongan, East Java, Indonesia. Open to international opportunities — both remote and relocation.
+Currently based in Lamongan, East Java, Indonesia. Open to international opportunities - both remote and relocation.
 
 ## Key Facts
 
@@ -24,11 +24,11 @@ Currently based in Lamongan, East Java, Indonesia. Open to international opportu
 
 ## Experience
 
-- **Sales Executive** at PT Dwijaya Adiwahana (ISUZU Jombang) — Mar 2026–Present
-- **Technical Consultant** at Solutionlabs Group — Aug 2024–Nov 2025
-- **Backend Developer** (Project-based) at Solutionlabs Group — Nov 2024–Jan 2025
-- **Technical Consultant** at PT Mitra Integrasi Informatika (Metrodata Group) — Jun 2023–Jun 2024
-- **IT System Administrator** at Mutiara Hati Hospital — Jan 2020–Jun 2023
+- **Sales Executive** at PT Dwijaya Adiwahana (ISUZU Jombang) - Mar 2026-Present
+- **Technical Consultant** at Solutionlabs Group - Aug 2024-Nov 2025
+- **Backend Developer** (Project-based) at Solutionlabs Group - Nov 2024-Jan 2025
+- **Technical Consultant** at PT Mitra Integrasi Informatika (Metrodata Group) - Jun 2023-Jun 2024
+- **IT System Administrator** at Mutiara Hati Hospital - Jan 2020-Jun 2023
 
 ## Skills
 
@@ -38,7 +38,7 @@ Currently based in Lamongan, East Java, Indonesia. Open to international opportu
 
 ## Selected Projects
 
-- [Windows Server Hardening Script](https://github.com/therealsatria): A PowerShell toolkit that applies a baseline security configuration to Windows Server hosts — account and audit policies, SMB signing, and unnecessary service reduction.
+- [Windows Server Hardening Script](https://github.com/therealsatria): A PowerShell toolkit that applies a baseline security configuration to Windows Server hosts - account and audit policies, SMB signing, and unnecessary service reduction.
 - [Personal Portfolio Website](https://therealsatria.github.io/): A single-page, dependency-free landing page built with semantic HTML, modern CSS, and vanilla JavaScript.
 
 ## Contact

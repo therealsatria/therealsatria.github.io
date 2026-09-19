@@ -1,4 +1,4 @@
-# Satria Nugraha — Complete Portfolio Content
+# Satria Nugraha - Complete Portfolio Content
 
 > Full markdown version of the personal portfolio at https://therealsatria.github.io/ for AI consumption. This file contains the complete content of the site in a single document.
 
@@ -16,9 +16,9 @@
 
 ## Professional Summary
 
-I am an IT infrastructure professional specialising in Microsoft environments, based in Lamongan, East Java, Indonesia. My background combines Microsoft infrastructure and hands-on system administration with supporting backend development, which means I understand both the application layer and the environment it runs on. I have worked as a Technical Consultant, a System Administrator, and a backend developer — often as the person clients and colleagues turn to when something breaks and the cause is not obvious.
+I am an IT infrastructure professional specialising in Microsoft environments, based in Lamongan, East Java, Indonesia. My background combines Microsoft infrastructure and hands-on system administration with supporting backend development, which means I understand both the application layer and the environment it runs on. I have worked as a Technical Consultant, a System Administrator, and a backend developer - often as the person clients and colleagues turn to when something breaks and the cause is not obvious.
 
-My strongest skill is troubleshooting and root cause analysis. I prefer to find out why an issue happened rather than apply a temporary fix, and I document the result so it does not come back. I work carefully, communicate clearly, and take ownership of the systems I am responsible for — including a period as the sole IT person for a hospital environment, where reliability was not optional.
+My strongest skill is troubleshooting and root cause analysis. I prefer to find out why an issue happened rather than apply a temporary fix, and I document the result so it does not come back. I work carefully, communicate clearly, and take ownership of the systems I am responsible for - including a period as the sole IT person for a hospital environment, where reliability was not optional.
 
 I am open to international opportunities, including remote roles and relocation to the GCC region (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, and other markets. I adapt quickly to new environments, tools, and working cultures.
 
@@ -52,15 +52,15 @@ I am open to international opportunities, including remote roles and relocation 
 
 ## Experience
 
-### Sales Executive — PT Dwijaya Adiwahana (ISUZU Jombang)
-**Period:** Mar 2026 – Present
+### Sales Executive - PT Dwijaya Adiwahana (ISUZU Jombang)
+**Period:** Mar 2026 - Present
 **Location:** Jombang, East Java, Indonesia
 
 - Engaged with commercial clients to understand operational requirements.
 - Coordinated internal teams to support delivery and after-sales processes.
 
-### Technical Consultant — Solutionlabs Group
-**Period:** Aug 2024 – Nov 2025
+### Technical Consultant - Solutionlabs Group
+**Period:** Aug 2024 - Nov 2025
 **Location:** Yogyakarta, Indonesia
 
 - Managed Microsoft 365 environments and supported server infrastructure to maintain system availability.
@@ -68,15 +68,15 @@ I am open to international opportunities, including remote roles and relocation 
 - Conducted preventive maintenance and prepared technical reports for decision-making.
 - Collaborated with teams to improve cloud infrastructure and operational processes.
 
-### Backend Developer (Project-based) — Solutionlabs Group
-**Period:** Nov 2024 – Jan 2025
+### Backend Developer (Project-based) - Solutionlabs Group
+**Period:** Nov 2024 - Jan 2025
 **Location:** Yogyakarta, Indonesia
 
 - Developed and maintained RESTful APIs using .NET Core as part of a separate project engagement.
 - Supported integration work and troubleshooting alongside primary Technical Consultant responsibilities.
 
-### Technical Consultant — PT Mitra Integrasi Informatika (Metrodata Group)
-**Period:** Jun 2023 – Jun 2024
+### Technical Consultant - PT Mitra Integrasi Informatika (Metrodata Group)
+**Period:** Jun 2023 - Jun 2024
 **Location:** Jakarta, Indonesia
 
 - Conducted system assessments and gap analyses for enterprise clients.
@@ -84,8 +84,8 @@ I am open to international opportunities, including remote roles and relocation 
 - Delivered knowledge transfer sessions and created technical documentation.
 - Supported Microsoft-related solutions and infrastructure components.
 
-### IT System Administrator — Mutiara Hati Hospital
-**Period:** Jan 2020 – Jun 2023
+### IT System Administrator - Mutiara Hati Hospital
+**Period:** Jan 2020 - Jun 2023
 **Location:** Mojokerto, Indonesia
 
 - Managed end-to-end IT operations as the sole technical person (network, servers, Linux, and user support).
@@ -102,14 +102,14 @@ A PowerShell toolkit that applies a baseline security configuration to Windows S
 **Repository:** https://github.com/therealsatria
 
 ### Personal Portfolio Website
-This site — a single-page, dependency-free landing page built with semantic HTML, modern CSS, and vanilla JavaScript. Deployed on GitHub Pages.
+This site - a single-page, dependency-free landing page built with semantic HTML, modern CSS, and vanilla JavaScript. Deployed on GitHub Pages.
 
 **Technologies:** HTML, CSS, JavaScript, GitHub Pages
 **Repository:** https://github.com/therealsatria/therealsatria.github.io
 
 ## Availability
 
-Open to full-time roles and contract engagements — remote or on-site with relocation.
+Open to full-time roles and contract engagements - remote or on-site with relocation.
 
 **Target regions:** GCC (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, worldwide.
 **Notice period:** 1 month.

@@ -1,6 +1,6 @@
 ---
 // =============================================================
-// SEO.astro — Centralised SEO, Open Graph, Twitter Cards,
+// SEO.astro - Centralised SEO, Open Graph, Twitter Cards,
 // geo tags, and JSON-LD structured data for the entire site.
 //
 // Usage:
@@ -37,7 +37,7 @@ const canonicalURL = canonical
 const ogImageURL = new URL(ogImage, siteUrl);
 
 // -------------------------------------------------------------
-// Geo coordinates — Lamongan, East Java, Indonesia
+// Geo coordinates - Lamongan, East Java, Indonesia
 // -------------------------------------------------------------
 const GEO = {
   region: 'ID-JI',
@@ -47,12 +47,12 @@ const GEO = {
 };
 
 // -------------------------------------------------------------
-// JSON-LD @graph — semua entitas saling terhubung via @id
+// JSON-LD @graph - semua entitas saling terhubung via @id
 // -------------------------------------------------------------
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
-    // 1. Person — entitas utama
+    // 1. Person - entitas utama
     {
       '@type': 'Person',
       '@id': `${siteUrl.href}#person`,
@@ -62,7 +62,7 @@ const structuredData = {
       alternateName: 'therealsatria',
       jobTitle: 'System Administrator & Microsoft Infrastructure Specialist',
       description:
-        'IT infrastructure professional specialising in Microsoft environments — Windows Server, Microsoft 365, Entra ID, and Intune — based in Lamongan, East Java, Indonesia. Open to remote work and relocation.',
+        'IT infrastructure professional specialising in Microsoft environments - Windows Server, Microsoft 365, Entra ID, and Intune - based in Lamongan, East Java, Indonesia. Open to remote work and relocation.',
       url: siteUrl.href,
       image: {
         '@type': 'ImageObject',
@@ -168,7 +168,7 @@ const structuredData = {
       '@type': 'WebSite',
       '@id': `${siteUrl.href}#website`,
       url: siteUrl.href,
-      name: 'Satria Nugraha — IT Infrastructure | M365 Specialist',
+      name: 'Satria Nugraha - IT Infrastructure | M365 Specialist',
       description:
         'Personal portfolio and digital CV of Satria Nugraha, an IT infrastructure professional specialising in Microsoft environments.',
       publisher: { '@id': `${siteUrl.href}#person` },
@@ -191,7 +191,7 @@ const structuredData = {
       ],
     },
 
-    // 5. ItemList — daftar proyek
+    // 5. ItemList - daftar proyek
     {
       '@type': 'ItemList',
       '@id': `${siteUrl.href}#projects`,
@@ -269,7 +269,7 @@ const structuredData = {
 )}
 
 <!-- ========================================================= -->
-<!-- Geo tags — Lamongan, East Java -->
+<!-- Geo tags - Lamongan, East Java -->
 <!-- ========================================================= -->
 <meta name="geo.region" content={GEO.region} />
 <meta name="geo.placename" content={GEO.placename} />
@@ -286,7 +286,7 @@ const structuredData = {
 <meta property="og:image" content={ogImageURL.href} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Satria Nugraha — IT Infrastructure | M365 Specialist" />
+<meta property="og:image:alt" content="Satria Nugraha - IT Infrastructure | M365 Specialist" />
 <meta property="og:site_name" content="Satria Nugraha" />
 <meta property="og:locale" content="en_US" />
 
@@ -297,7 +297,7 @@ const structuredData = {
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageURL.href} />
-<meta name="twitter:image:alt" content="Satria Nugraha — IT Infrastructure | M365 Specialist" />
+<meta name="twitter:image:alt" content="Satria Nugraha - IT Infrastructure | M365 Specialist" />
 
 <!-- ========================================================= -->
 <!-- JSON-LD Structured Data -->
