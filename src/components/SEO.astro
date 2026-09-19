@@ -60,9 +60,9 @@ const structuredData = {
       givenName: 'Satria',
       familyName: 'Nugraha',
       alternateName: 'therealsatria',
-      jobTitle: 'System Administrator & Microsoft Infrastructure Specialist',
+      jobTitle: 'System Administrator & Microsoft Cloud Specialist',
       description:
-        'IT infrastructure professional specialising in Microsoft environments - Windows Server, Microsoft 365, Entra ID, and Intune - based in Lamongan, East Java, Indonesia. Open to remote work and relocation.',
+        'IT professional with experience in system administration, cloud support, and IT infrastructure. Skilled in troubleshooting, server administration, Microsoft 365, Linux, and cloud services. Strong background in root cause analysis and resolving complex technical issues. Based in Lamongan, East Java, Indonesia. Open to System Administrator, Cloud Support, and Infrastructure roles, including international opportunities.',
       url: siteUrl.href,
       image: {
         '@type': 'ImageObject',
@@ -85,26 +85,26 @@ const structuredData = {
         { '@type': 'Language', name: 'English', alternateName: 'en' },
       ],
       knowsAbout: [
-        'Windows Server Administration',
-        'Microsoft 365 Administration',
-        'Entra ID (Azure AD)',
-        'Active Directory',
-        'Microsoft Intune',
-        'Group Policy Management',
+        'Troubleshooting',
+        'Server Administration',
+        'Linux Administration',
         'System Administration',
         'IT Infrastructure',
-        'Linux Administration',
-        'Troubleshooting',
+        'Firewalls',
+        'Microsoft 365 Administration',
+        'Windows Server',
+        'Entra ID',
+        'Active Directory',
+        'Defender for Office 365',
         'Root Cause Analysis',
-        'Incident Management',
-        'Virtualization',
-        'Networking (TCP/IP, DNS, DHCP)',
-        'PowerShell Scripting',
-        'Bash Scripting',
-        'Technical Documentation',
-        'IT Asset Management',
-        'Git',
-        'Docker',
+        'Problem Solving',
+        'Critical Thinking',
+        'Stakeholder Communication',
+        'Network Security',
+        'OPNsense',
+        'Proxmox',
+        'MikroTik',
+        'Cloud Support',
       ],
       sameAs: [
         'https://www.linkedin.com/in/satrianug',
@@ -112,7 +112,7 @@ const structuredData = {
       ],
       worksFor: {
         '@type': 'Organization',
-        name: 'PT Dwijaya Adiwahana (ISUZU Jombang)',
+        name: 'Self-Employed (IT Freelance)',
         location: {
           '@type': 'Place',
           name: 'Jombang, East Java, Indonesia',
@@ -120,19 +120,19 @@ const structuredData = {
       },
       hasOccupation: {
         '@type': 'Occupation',
-        name: 'System Administrator',
+        name: 'IT Freelance / System Administrator',
         occupationLocation: {
           '@type': 'Country',
           name: 'Indonesia',
         },
         skills:
-          'Microsoft 365, Windows Server, Entra ID, Intune, Active Directory, Linux Administration, Troubleshooting, Root Cause Analysis, PowerShell',
+          'Troubleshooting, Server Administration, Linux Administration, System Administration, IT Infrastructure, Firewalls, Microsoft 365 Administration, Windows Server, Entra ID, Active Directory, Defender for Office 365, Root Cause Analysis',
       },
       seeks: {
         '@type': 'Demand',
-        name: 'Remote work and relocation opportunities',
+        name: 'System Administrator, Cloud Support, and Infrastructure roles',
         description:
-          'Open to remote roles and relocation to GCC countries (Kuwait, Saudi Arabia, UAE), Japan, Malaysia, Singapore, and worldwide.',
+          'Open to System Administrator, Cloud Support, and Infrastructure roles, including remote work and international opportunities (GCC countries, Japan, Malaysia, Singapore, and worldwide).',
         availability: 'https://schema.org/InStock',
         areaServed: [
           { '@type': 'Country', name: 'Kuwait' },
@@ -168,9 +168,9 @@ const structuredData = {
       '@type': 'WebSite',
       '@id': `${siteUrl.href}#website`,
       url: siteUrl.href,
-      name: 'Satria Nugraha - IT Infrastructure | M365 Specialist',
+      name: 'Satria Nugraha - System Administrator & Microsoft Cloud Specialist',
       description:
-        'Personal portfolio and digital CV of Satria Nugraha, an IT infrastructure professional specialising in Microsoft environments.',
+        'Personal portfolio and digital CV of Satria Nugraha, an IT professional specialising in system administration, Microsoft 365, Linux, and IT infrastructure.',
       publisher: { '@id': `${siteUrl.href}#person` },
       inLanguage: 'en',
       copyrightYear: new Date().getFullYear(),
@@ -197,12 +197,23 @@ const structuredData = {
       '@id': `${siteUrl.href}#projects`,
       name: 'Selected Projects',
       description:
-        'Selected software development and IT infrastructure projects by Satria Nugraha.',
-      numberOfItems: 2,
+        'Selected IT infrastructure and software projects by Satria Nugraha.',
+      numberOfItems: 3,
       itemListElement: [
         {
           '@type': 'ListItem',
           position: 1,
+          item: {
+            '@type': 'CreativeWork',
+            name: 'Hospital Network Security Infrastructure (OPNsense)',
+            description:
+              'Designed and implemented network security infrastructure using OPNsense on x86 hardware for a hospital environment, with pre-production validation in a Proxmox lab and MikroTik router configuration.',
+            author: { '@id': `${siteUrl.href}#person` },
+          },
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
           item: {
             '@type': 'SoftwareSourceCode',
             name: 'Windows Server Hardening Script',
@@ -215,7 +226,7 @@ const structuredData = {
         },
         {
           '@type': 'ListItem',
-          position: 2,
+          position: 3,
           item: {
             '@type': 'WebSite',
             name: 'Personal Portfolio Website',
@@ -286,7 +297,7 @@ const structuredData = {
 <meta property="og:image" content={ogImageURL.href} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Satria Nugraha - IT Infrastructure | M365 Specialist" />
+<meta property="og:image:alt" content="Satria Nugraha - System Administrator & Microsoft Cloud Specialist" />
 <meta property="og:site_name" content="Satria Nugraha" />
 <meta property="og:locale" content="en_US" />
 
@@ -297,7 +308,7 @@ const structuredData = {
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageURL.href} />
-<meta name="twitter:image:alt" content="Satria Nugraha - IT Infrastructure | M365 Specialist" />
+<meta name="twitter:image:alt" content="Satria Nugraha - System Administrator & Microsoft Cloud Specialist" />
 
 <!-- ========================================================= -->
 <!-- JSON-LD Structured Data -->
